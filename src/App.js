@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./containers/Header/header";
+import Navbar from "./components/nav/nav.jsx";
+import About from "./containers/About/about";
+import Projects from "./containers/Projects/projects.jsx";
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+        <Router>
+          <Navbar />
+            <Routes>
+              <Route 
+                exact path ={'/'}  // With V6 with need to wrap our component with our Redirect/Protected Routes
+                element={
+                          <Header/>
+                        }
+              />
+              <Route 
+                exact path ={'/about'}  
+                element={
+                          <About/>
+                        }
+              />
+             <Route 
+                exact path ={'/projects'} 
+                element={
+                          <Projects/>
+                        }
+              />
+            </Routes>
+      </Router>
     </div>
   );
 }

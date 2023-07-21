@@ -1,0 +1,79 @@
+#home{
+    min-height: 100vh;
+    position: relative;
+}
+/* Mobile */
+#home{
+   background-image: url('../../assets/bg/mobile-bg.png');
+   background-size: cover;
+}
+.home-container{
+    padding-top: 152px;
+    padding-left: 27px;
+}
+.home-greeting{
+    font-size: 18px;
+    color: #FFF;
+    padding-bottom: 10px;
+}
+.home-name{
+    font-size: 62px;
+    color: #FFF;
+    padding-bottom: 10px;
+}
+.home-profession{
+    font-size: 20px;
+    color: #43D9AD;
+}
+.home-github{
+    padding-top: 195px;
+    padding-bottom: 16px;
+    font-size: 14px;
+    color: #607B96;
+}
+.home-github-link{
+    font-size: 14px;
+    line-height: 19.6px;
+    color: #4D5BCE;
+}
+.home-github-span-a{
+    font-size: 14px;
+    color: #43D9AD;
+}
+.home-github-span-b{
+    font-size: 14px;
+    color: #FFF;
+}
+.home-github-a{
+    font-size: 14px;
+    color: #E99287;
+}
+.home-game{
+    display: none;
+}
+/*Desktop */
+@media only screen and (min-width: 806px){
+
+#home{   
+    background-image: url('../../assets/bg/desktop-bg.png');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 129px;
+}
+
+.home-game{
+    display: inline-block;
+}
+}
+
+@media only screen and (min-width: 1194px){ 
+
+.home-container{   
+    padding-top: 0;
+    padding-left: 0;
+}
+    
+}
