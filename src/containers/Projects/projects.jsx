@@ -6,6 +6,10 @@ import react from "../../assets/icons/react.svg";
 import css from "../../assets/icons/css.svg";
 import asterisk from "../../assets/icons/asterisk.svg";
 import cms from "../../assets/icons/cms.svg";
+import javascriptBlack from "../../assets/icons/javascript-black.svg";
+import reactBlack from "../../assets/icons/react-black.svg";
+import cssBlack from "../../assets/icons/css-black.svg";
+import cmsBlack from "../../assets/icons/cms-black.svg";
 
 const Projects = () => {
   const filterItems = ["All", "Javascript", "React JS", "CMS", "CSS"];
@@ -139,7 +143,7 @@ const Projects = () => {
         }
         <div className="works-selected-container">
           <div className="works-active-filters-container">
-            <h3 className="works-active-filters-title">// projects </h3>
+            <h3 className="works-active-filters-title">{"//"} projects </h3>
             {activeFilters?.map((item) => (
               // display filters that are currently active
               <p className="works-active-filters">/ {item}; </p>
@@ -163,7 +167,31 @@ const Projects = () => {
                       src={urlFor(item.imgUrl)}
                       alt="card media"
                     />
-                    <div className="card-icon" />
+                    {item.tags.toString() === "React JS" ? (
+                      <img
+                        className="card-icon light-blue"
+                        src={reactBlack}
+                        alt="react"
+                      />
+                    ) : item.tags.toString() === "Javascript" ? (
+                      <img
+                        className="card-icon yellow"
+                        src={javascriptBlack}
+                        alt="javascript"
+                      />
+                    ) : item.tags.toString() === "CSS" ? (
+                      <img
+                        className="card-icon dark-blue"
+                        src={cssBlack}
+                        alt="css"
+                      />
+                    ) : item.tags.toString() === "CMS" ? (
+                      <img
+                        className="card-icon green"
+                        src={cmsBlack}
+                        alt="cms"
+                      />
+                    ) : null}
                   </div>
                   <div className="card-description">
                     <p className="card-text">{item.description}</p>

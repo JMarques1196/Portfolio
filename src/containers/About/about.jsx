@@ -5,19 +5,38 @@ import arrowRight from "../../assets/icons/arrow-right.svg";
 import terminal from "../../assets/icons/terminal.svg";
 import gamepad from "../../assets/icons/gamepad.svg";
 import settings from "../../assets/icons/settings.svg";
+import chat from "../../assets/icons/chat-icon.svg";
+import closeButton from "../../assets/icons/close-button.svg";
 
 const About = () => {
+  const lineNumbers = [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+  ];
   // State to fetch data from Sanity
   const [about, setAbout] = useState([]);
   // State to manage each individual menu toggle
   const [titleToggle, setTitleToggle] = useState([]);
-  const [subtitleToggle, setSubtitleToggle] = useState([false, false, false]);
-
+  const [subtitleToggle, setSubtitleToggle] = useState([true, false, false]);
   const [textToggled, setTextToggled] = useState({
-    status: true,
+    status: false,
     key: "",
   });
-
+  const [detailsToggle, setDetailsToggle] = useState([false, false]);
   // useEffect to grab data from sanity
   useEffect(() => {
     const query = '*[_type == "about"]';
@@ -27,9 +46,12 @@ const About = () => {
 
     // setting up a aux array for controling the section title states
     const arr = new Array(about.length);
-    setTitleToggle(arr.fill(false));
-
-    console.log(about);
+    arr[0] = true;
+    setTitleToggle(arr.fill(false, 1, arr.length));
+    setTextToggled({
+      status: true,
+      key: "2e61d7628cfa",
+    });
   }, [about.length]);
 
   ///////////
@@ -69,6 +91,17 @@ const About = () => {
       aux[dropdown[i].position] = false;
     }
     setSubtitleToggle(aux);
+  };
+
+  const manageDetails = (detailsState, position) => {
+    if (position === "1") {
+      setDetailsToggle([!detailsState[0], detailsState[1]]);
+      console.log("1");
+    } else if (position === "2") {
+      setDetailsToggle([detailsState[0], !detailsState[1]]);
+      console.log("2");
+    }
+    console.log(detailsToggle);
   };
 
   return (
@@ -181,32 +214,116 @@ const About = () => {
                     }
                   >
                     <div className="about-text-title">
-                      <h1 className="about-title title-desktop selected">
-                        <span className="slash">//</span> {aboutItem.item}{" "}
-                      </h1>
+                      <div className="title-desktop-container">
+                        <h1 className="about-title title-desktop selected">
+                          <span className="slash">{"//"}</span> {aboutItem.item}{" "}
+                        </h1>
+                        <img
+                          className="title-close"
+                          src={closeButton}
+                          alt="close"
+                          onClick={() => handleTextToggle(aboutItem._key)}
+                        />
+                      </div>
                       <h2 className="about-subtitle subtitle-desktop">
                         / {dropdown.subtitle}
                       </h2>
                     </div>
                     <div className="about-content-desktop">
+                      <div className="lineNumbers-container">
+                        {lineNumbers.map((lineNumber, number) => (
+                          <p className="lineNumbers">{lineNumber}</p>
+                        ))}
+                      </div>
                       <div className="about-text-content">
                         <p className="about-text">{aboutItem.text}</p>
                       </div>
                       <div className="about-images">
-                        {aboutItem.imageOne ? (
-                          <img
-                            className=""
-                            src={urlFor(aboutItem.imageOne)}
-                            alt="im1"
-                          />
-                        ) : null}
-                        {aboutItem.imageTwo ? (
-                          <img
-                            className=""
-                            src={urlFor(aboutItem.imageTwo)}
-                            alt="im2"
-                          />
-                        ) : null}
+                        <h2 className="about-images-title">{"// Title"}</h2>
+                        <div className="about-images-container">
+                          <div className="scroll-wrapper">
+                            {aboutItem.imageOne ? (
+                              <>
+                                <div className="details-container">
+                                  <div className="about-profile-pic"></div>
+                                  <div
+                                    className="details-chat-container"
+                                    onClick={() =>
+                                      manageDetails(detailsToggle, "1")
+                                    }
+                                  >
+                                    <img src={chat} alt="chat" />
+                                    <p className="details-chat">details</p>
+                                  </div>
+                                </div>
+                                <img
+                                  className="about-image"
+                                  src={urlFor(aboutItem.imageOne)}
+                                  alt="im1"
+                                />
+                                <div
+                                  className={
+                                    detailsToggle[0] === true
+                                      ? "details-text-container"
+                                      : "hidden"
+                                  }
+                                >
+                                  <p className="details-text">
+                                    This is a lorem fucking Ipsum
+                                  </p>
+                                  <img
+                                    className="close-button"
+                                    src={closeButton}
+                                    alt="close"
+                                    onClick={() =>
+                                      manageDetails(detailsToggle, "1")
+                                    }
+                                  />
+                                </div>
+                              </>
+                            ) : null}
+                            {aboutItem.imageTwo ? (
+                              <>
+                                <div className="details-container">
+                                  <div className="about-profile-pic"></div>
+                                  <div
+                                    className="details-chat-container"
+                                    onClick={() =>
+                                      manageDetails(detailsToggle, "2")
+                                    }
+                                  >
+                                    <img src={chat} alt="chat" />
+                                    <p className="details-chat">details</p>
+                                  </div>
+                                </div>
+                                <img
+                                  className="about-image"
+                                  src={urlFor(aboutItem.imageTwo)}
+                                  alt="im2"
+                                />
+                                <div
+                                  className={
+                                    detailsToggle[1] === true
+                                      ? "details-text-container"
+                                      : "hidden"
+                                  }
+                                >
+                                  <p className="details-text">
+                                    This is a lorem fucking Ipsum
+                                  </p>
+                                  <img
+                                    className="close-button"
+                                    src={closeButton}
+                                    alt="close"
+                                    onClick={() =>
+                                      manageDetails(detailsToggle, "2")
+                                    }
+                                  />
+                                </div>
+                              </>
+                            ) : null}
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>

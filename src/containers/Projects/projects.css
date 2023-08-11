@@ -1,5 +1,17 @@
 #works {
 }
+.dark-blue {
+  background-color: #264de4;
+}
+.light-blue {
+  background-color: #61dbfb;
+}
+.yellow {
+  background-color: #f7df1e;
+}
+.green {
+  background-color: #81d4af;
+}
 .works-title {
   font-size: 14px;
   color: #fff;
@@ -144,8 +156,8 @@ input[type="checkbox"]:checked {
 .card-icon {
   width: 28px;
   height: 28px;
-  background-color: red;
   position: absolute;
+  fill: #011221;
   top: 17px;
   right: 17px;
   border-radius: 4px;
