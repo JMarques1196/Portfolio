@@ -1,3 +1,12 @@
+.pink {
+  color: #c98bdf;
+}
+.orange {
+  color: #fea55f;
+}
+.gray {
+  color: #607b96;
+}
 .contacts {
   font-size: 14px;
   color: #fff;
@@ -45,11 +54,19 @@
   font-weight: 400;
   cursor: pointer;
 }
-.inputs-container {
-  padding-top: 42px;
+.form-container {
+  margin-top: 42px;
+  width: 100%;
+}
+.form-content {
+}
+.form {
   display: grid;
   justify-items: center;
   gap: 18px;
+}
+.input-container-title {
+  display: none;
 }
 .input {
   width: 291px;
@@ -103,7 +120,13 @@
   margin-left: 27px;
   margin-right: 27px;
 }
+.form-animation {
+  display: none;
+}
 @media only screen and (min-width: 500px) {
+  .input {
+    width: 372px;
+  }
   .input-name {
     width: 372px;
   }
@@ -122,6 +145,7 @@
   .contacts-container {
     display: flex;
     height: 100%;
+    width: 100%;
   }
   .contact-selection-container {
     height: auto;
@@ -135,7 +159,72 @@
     width: 312px;
     border-bottom: 1px solid #1e2d3d;
   }
+  .contact-items-container {
+    padding-top: 18px;
+    padding-bottom: 27px;
+  }
   .contacts {
     display: none;
+  }
+  .form-container {
+    margin-top: 57px;
+  }
+  .input-title-wrapper {
+    height: 31px;
+    position: fixed;
+    width: 100%;
+    padding-top: 0;
+    border-bottom: 1px solid #1e2d3d;
+    z-index: 1;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+  .input-container-title {
+    height: 31px;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 31px;
+    font-weight: 400;
+    padding-left: 12px;
+    color: #607b96;
+    text-align: center;
+    border-right: 1px solid #1e2d3d;
+    padding-right: 78.23px;
+  }
+  .form-content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+  .border-div {
+    width: 50%;
+    height: 100%;
+    border-right: solid 1px #1e2d3d;
+    padding-top: 115px;
+  }
+  .form {
+    margin-top: 60px;
+    justify-content: center;
+  }
+  .form-animation {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    width: 50%;
+    padding-top: 115px;
+  }
+  .lineNumbers {
+    font-size: 18px;
+    color: #607b96;
+    text-align: end;
+    padding-right: 40px;
+  }
+  .line-code {
+    font-size: 16px;
+    font-weight: 400;
+    color: #5565e8;
+  }
+  .spacer {
+    height: 37px;
   }
 }

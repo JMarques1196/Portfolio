@@ -203,7 +203,6 @@ need more breakpoints for images
     width: 24px;
     padding-top: 17px;
   }
-
   .about-dropdown-container {
     margin-top: 56px;
     border-right: 1px solid #1e2d3d;
@@ -236,9 +235,6 @@ need more breakpoints for images
   .title-desktop-container {
     display: flex;
     border-right: 1px solid #1e2d3d;
-  }
-  .about-title {
-    color: #607b96;
   }
   .about-title-open {
     margin-bottom: 21px;
