@@ -1,0 +1,23 @@
+.canvas {
+  border: 1px solid black;
+  background-color: #011627;
+  align-self: center;
+}
+.game-wrapper {
+  display: flex;
+  gap: 24px;
+}
+.game-info {
+  align-self: center;
+}
+.start-game {
+  width: 112px;
+  height: 38px;
+  background-color: #fea55f;
+}
+.hidden {
+  display: none;
+}
+.visible {
+  display: block;
+}

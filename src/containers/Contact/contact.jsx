@@ -222,7 +222,7 @@ const Contacts = () => {
                   <p className="lineNumbers">{lineNumber}</p>
                 ))}
               </div>
-              <div>
+              <div className="animation-code-container">
                 <p className="line-code">
                   <span className="pink">const</span> button{" "}
                   <span className="pink">=</span> document.querySelector

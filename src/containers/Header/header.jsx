@@ -1,5 +1,6 @@
 import "./header.css";
 import Placeholder from "../../assets/placeholder.png";
+import Snake from "../../components/snake/snake";
 
 const Header = () => {
   return (
@@ -25,7 +26,7 @@ const Header = () => {
         </p>
       </div>
       <div className="home-game">
-        <img src={Placeholder} alt="placeholder" />
+        <Snake />
       </div>
     </div>
   );

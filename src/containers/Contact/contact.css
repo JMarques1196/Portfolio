@@ -81,7 +81,7 @@
 }
 .input-name {
   height: 41px;
-  width: 291px;
+  width: 100%;
   background-color: #011221;
   border: 1px solid #1e2d3d;
   border-radius: 8px;
@@ -205,6 +205,21 @@
   .form {
     margin-top: 60px;
     justify-content: center;
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .input {
+    width: 100%;
+  }
+  .input-title {
+    width: 100%;
+  }
+  .input-name {
+    width: 100%;
+  }
+  .input-message {
+    width: 100%;
   }
   .form-animation {
     display: flex;
@@ -218,13 +233,20 @@
     color: #607b96;
     text-align: end;
     padding-right: 40px;
+    padding-left: 15px;
+  }
+  .animation-code-container {
+    max-width: 569px;
   }
   .line-code {
     font-size: 16px;
     font-weight: 400;
     color: #5565e8;
+    width: 100%;
+    word-break: break-all;
   }
   .spacer {
     height: 37px;
+    width: 100%;
   }
 }
