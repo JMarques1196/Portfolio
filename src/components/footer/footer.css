@@ -1,0 +1,7 @@
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 50px;
+  border-top: 1px solid #1e2d3d;
+}

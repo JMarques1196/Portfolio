@@ -192,6 +192,7 @@ need more breakpoints for images
   }
   .about-icon-bar {
     margin-top: 56px;
+    margin-bottom: 50px;
     display: grid;
     justify-content: center;
     grid-template-rows: 40px 40px 40px;
@@ -205,6 +206,7 @@ need more breakpoints for images
   }
   .about-dropdown-container {
     margin-top: 56px;
+    margin-bottom: 50px;
     border-right: 1px solid #1e2d3d;
   }
   .about-title-container {
@@ -224,6 +226,7 @@ need more breakpoints for images
     display: block;
     padding-left: 0;
     padding-top: 56px;
+    margin-bottom: 50px;
     width: 100%;
     overflow: hidden;
   }
@@ -242,6 +245,7 @@ need more breakpoints for images
   .title-desktop {
     height: 31px;
     line-height: 31px;
+    color: #607b96;
   }
   .slash {
     display: none;
@@ -283,6 +287,12 @@ need more breakpoints for images
     padding-top: 80px;
     font-size: 18px;
     line-height: 150%;
+    overflow-y: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .about-text::-webkit-scrollbar {
+    display: none;
   }
   .about-images {
     padding-top: 0;
@@ -298,6 +308,7 @@ need more breakpoints for images
 
   .about-images-title {
     padding-top: 18px;
+    padding-left: 40px;
   }
   .about-images-title {
     margin: 0;

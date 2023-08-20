@@ -1,23 +1,75 @@
+.game-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
 .canvas {
   border: 1px solid black;
   background-color: #011627;
-  align-self: center;
+  position: absolute;
+  top: 37.5px;
+  left: 31px;
 }
-.game-wrapper {
-  display: flex;
-  gap: 24px;
-}
-.game-info {
-  align-self: center;
+.game-menu {
+  height: 402px;
+  width: 242px;
+  display: grid;
+  align-content: space-between;
+  position: absolute;
+  top: 37.5px;
+  left: 31px;
 }
 .start-game {
   width: 112px;
   height: 38px;
   background-color: #fea55f;
+  position: absolute;
+  bottom: 56px;
+  left: 63.35px;
+}
+.game-over {
+  width: 240px;
+  height: 48px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 400;
+  color: #43d9ad;
+  background-color: #011627;
+  position: absolute;
+  bottom: 105px;
 }
 .hidden {
   display: none;
 }
-.visible {
-  display: block;
+.filter {
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+.score {
+  font-size: 14px;
+  font-weight: 400;
+
+  color: #fff;
+  text-align: center;
+  padding-top: 10px;
+}
+.instructions {
+  width: 180px;
+  height: 140px;
+  position: absolute;
+  top: 37.5px;
+  right: 35px;
+  border-radius: 10px;
+  background-color: #1d5f58;
+  opacity: 90%;
+}
+.instructions-text-container {
+  padding-top: 35px;
+}
+.instructions-text {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 19px;
 }

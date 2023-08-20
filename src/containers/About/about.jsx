@@ -7,6 +7,7 @@ import gamepad from "../../assets/icons/gamepad.svg";
 import settings from "../../assets/icons/settings.svg";
 import chat from "../../assets/icons/chat-icon.svg";
 import closeButton from "../../assets/icons/close-button.svg";
+import Footer from "../../components/footer/footer";
 
 const About = () => {
   const lineNumbers = [
@@ -106,6 +107,7 @@ const About = () => {
 
   return (
     <div id="about">
+      <Footer />
       <h1 className="about-me">_about-me</h1>
       <div className="about-container">
         <div className="about-icon-bar">
@@ -215,7 +217,7 @@ const About = () => {
                   >
                     <div className="about-text-title">
                       <div className="title-desktop-container">
-                        <h1 className="about-title title-desktop selected">
+                        <h1 className="about-title title-desktop">
                           <span className="slash">{"//"}</span> {aboutItem.item}{" "}
                         </h1>
                         <img

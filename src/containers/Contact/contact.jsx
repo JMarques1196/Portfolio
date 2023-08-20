@@ -159,7 +159,7 @@ const Contacts = () => {
                 <form className="form">
                   <div className="input">
                     <p className="input-title">_name:</p>
-                    <input
+                    <textarea
                       className="input-name"
                       type="text"
                       placeholder=""
@@ -170,7 +170,7 @@ const Contacts = () => {
                   </div>
                   <div className="input">
                     <p className="input-title">_email:</p>
-                    <input
+                    <textarea
                       className="input-name"
                       type="text"
                       placeholder=""
@@ -181,7 +181,7 @@ const Contacts = () => {
                   </div>
                   <div className="input">
                     <p className="input-title">_message:</p>
-                    <input
+                    <textarea
                       className="input-message"
                       type="text"
                       placeholder=""
@@ -202,14 +202,16 @@ const Contacts = () => {
                 <div className="new-message">
                   <h1 className="new-message-title"> Thank you! </h1>
                   <p className="new-message-text">
-                    {" "}
                     Your message was submitted! I'll try to repply as soon as
                     possible!
                   </p>
                   <button
                     type="button"
                     className="submit"
-                    onClick={() => setIsFormSubmitted(false)}
+                    onClick={() => {
+                      setIsFormSubmitted(false);
+                      setFormData("", "", "");
+                    }}
                   >
                     Send new message
                   </button>
@@ -281,13 +283,13 @@ const Contacts = () => {
                   <span className="gray">
                     , () <span className="pink"> ={">"} </span> {"{"}
                   </span>
-                  <p className="line-code">
+                  <span className="line-code">
                     form.send<span className="gray">(</span>message
                     <span className="gray">);</span>
-                  </p>
-                  <p className="line-code">
+                  </span>
+                  <span className="line-code">
                     <span className="gray">{"}"})</span>
-                  </p>
+                  </span>
                 </p>
               </div>
             </div>

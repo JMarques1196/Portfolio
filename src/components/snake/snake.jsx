@@ -19,6 +19,8 @@ const Snake = () => {
   const [speed, setSpeed] = useState(null);
   const [gameOver, setGameOver] = useState(false);
   const [lastKeycode, setLastKeyCode] = useState(38);
+  const [start, setStart] = useState(true);
+  const [score, setScore] = useState(0);
 
   const startGame = () => {
     setSnake(SNAKE_START);
@@ -26,10 +28,14 @@ const Snake = () => {
     setDir([0, -1]);
     setSpeed(SPEED);
     setGameOver(false);
+    setStart(false);
+    setScore(0);
+    canvasRef.current.focus();
   };
   const endGame = () => {
     setSpeed(null);
     setGameOver(true);
+    setLastKeyCode(38);
   };
   // So the snake cant back up into itself
   const checkGoBack = (keyCode) => {
@@ -85,6 +91,8 @@ const Snake = () => {
         newApple = createApple();
       }
       setApple(newApple);
+      let newScore = score + 1;
+      setScore(newScore);
       return true;
     }
     return false;
@@ -101,6 +109,7 @@ const Snake = () => {
 
   useEffect(() => {
     // fillRect creates a rectangle at x,y with width and heigh
+
     const context = canvasRef.current.getContext("2d");
 
     const gradient = context.createLinearGradient(0, 0, 0, 23);
@@ -117,26 +126,40 @@ const Snake = () => {
   useInterval(() => gameLoop(), speed);
 
   return (
-    <div
-      className="game-wrapper"
-      role="button"
-      tabIndex="0"
-      onKeyDown={(e) => moveSnake(e)}
-    >
+    <div className="game-wrapper" role="button" onKeyDown={(e) => moveSnake(e)}>
       <canvas
         className="canvas"
         ref={canvasRef}
         width={`${CANVAS_SIZE[0]}px`}
         height={`${CANVAS_SIZE[1]}px`}
+        tabIndex={1}
       />
       {
         // game over === false, does nothing
       }
-      <div className="game-info">
-        {gameOver && <div className="game-over">Game Over</div>}
-        <button className="start-game" onClick={startGame}>
+      <div className={gameOver === true ? "game-menu filter" : "game-menu"}>
+        {gameOver && <div className="game-over">Game Over!</div>}
+        <button
+          className={start === true ? "start-game" : "start-game hidden"}
+          onClick={startGame}
+        >
           Start Game
         </button>
+        <button
+          className={gameOver === true ? " start-game" : "hidden"}
+          onClick={startGame}
+        >
+          try again
+        </button>
+      </div>
+      <div>
+        <p className="score">Score:{score}</p>
+      </div>
+      <div className="instructions">
+        <div className="instructions-text-container">
+          <p className="instructions-text">{"//"} use keyboard</p>
+          <p className="instructions-text">{"//"} arrows to play</p>
+        </div>
       </div>
     </div>
   );
