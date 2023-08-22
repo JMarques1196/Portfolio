@@ -1,15 +1,20 @@
 import "./projects.css";
 import { useState, useEffect } from "react";
 import { client, urlFor } from "../../client";
-import javascript from "../../assets/icons/javascript.svg";
-import react from "../../assets/icons/react.svg";
-import css from "../../assets/icons/css.svg";
-import asterisk from "../../assets/icons/asterisk.svg";
-import cms from "../../assets/icons/cms.svg";
-import javascriptBlack from "../../assets/icons/javascript-black.svg";
-import reactBlack from "../../assets/icons/react-black.svg";
-import cssBlack from "../../assets/icons/css-black.svg";
-import cmsBlack from "../../assets/icons/cms-black.svg";
+import { Footer } from "../../components";
+import {
+  javascript,
+  javascriptBlack,
+  react,
+  css,
+  asterisk,
+  cms,
+  reactBlack,
+  cssBlack,
+  cmsBlack,
+  closeButton,
+} from "../../assets/icons";
+import { motion } from "framer-motion";
 
 const Projects = () => {
   const filterItems = ["All", "Javascript", "React JS", "CMS", "CSS"];
@@ -91,7 +96,13 @@ const Projects = () => {
 
   return (
     //Filter Section
-    <div id="works">
+    <motion.div
+      id="works"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      <Footer />
       <div className="works-container">
         <div className="works-selection-container">
           <h1 className="works-title">_portfolio</h1>
@@ -148,6 +159,7 @@ const Projects = () => {
               // display filters that are currently active
               <p className="works-active-filters">/ {item}; </p>
             ))}
+            <img className="title-close" src={closeButton} alt="close" />
           </div>
           {
             // cards
@@ -207,7 +219,7 @@ const Projects = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

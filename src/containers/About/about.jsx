@@ -1,13 +1,16 @@
 import "./about.css";
 import { client, urlFor } from "../../client";
 import { useState, useEffect } from "react";
-import arrowRight from "../../assets/icons/arrow-right.svg";
-import terminal from "../../assets/icons/terminal.svg";
-import gamepad from "../../assets/icons/gamepad.svg";
-import settings from "../../assets/icons/settings.svg";
-import chat from "../../assets/icons/chat-icon.svg";
-import closeButton from "../../assets/icons/close-button.svg";
-import Footer from "../../components/footer/footer";
+import {
+  arrowRight,
+  terminal,
+  gamepad,
+  settings,
+  chatIcon,
+  closeButton,
+} from "../../assets/icons";
+import { Footer } from "../../components";
+import { motion, AnimatePresence } from "framer-motion";
 
 const About = () => {
   const lineNumbers = [
@@ -106,7 +109,12 @@ const About = () => {
   };
 
   return (
-    <div id="about">
+    <motion.div
+      id="about"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <Footer />
       <h1 className="about-me">_about-me</h1>
       <div className="about-container">
@@ -119,10 +127,11 @@ const About = () => {
         <div className="about-dropdown-container">
           {about.map((about, index) => (
             <>
-              <div
+              <motion.div
+                whileTap={{ scale: 0.97 }}
                 className={
                   titleToggle[index] === true
-                    ? "about-title-container about-title-open"
+                    ? "about-title-container about-title-open selected"
                     : "about-title-container"
                 }
                 onClick={() => {
@@ -138,62 +147,110 @@ const About = () => {
                   }
                 ></i>
                 <h2 className="about-title">{about.title}</h2>
-              </div>
+              </motion.div>
               {
                 // Section Title
               }
 
               {about.aboutDropdown?.map((dropdown, subtitleIndex) => (
                 <>
-                  <div
-                    className={
-                      titleToggle[index] === true
-                        ? "about-subtitle-container visible"
-                        : "hidden"
-                    }
-                    onClick={() => handleSubtitleToggle(dropdown.position)}
-                  >
-                    <img
-                      className={
-                        subtitleToggle[dropdown.position] === true
-                          ? "about-arrow-icon rotate"
-                          : "about-arrow-icon"
-                      }
-                      src={arrowRight}
-                      alt="arrow"
-                    />
-                    <img
-                      className="about-folder-icon"
-                      src={urlFor(dropdown.icon)}
-                      alt="icon"
-                    />
-                    <h2
-                      className={
-                        subtitleToggle[dropdown.position] === true
-                          ? "about-subtitle selected"
-                          : "about-subtitle"
-                      }
-                    >
-                      {dropdown.subtitle}
-                    </h2>
-                  </div>
+                  <AnimatePresence initial={false}>
+                    {titleToggle[index] && (
+                      //animations, same for all dropdowns
+                      <motion.section
+                        className="about-subtitle-container"
+                        key="content"
+                        initial="collapsed"
+                        animate="open"
+                        exit="collapsed"
+                        variants={{
+                          open: {
+                            opacity: 1,
+                            height: 13,
+                            paddingBottom: "15px",
+                            fontSize: "16px",
+                          },
+                          collapsed: {
+                            opacity: 0,
+                            height: 0,
+                            paddingBottom: 0,
+                            fontSize: 0,
+                          },
+                        }}
+                        transition={{
+                          duration: 0.8,
+                          ease: [0, 0.62, 0.23, 0.98],
+                        }}
+                        onClick={() => handleSubtitleToggle(dropdown.position)}
+                      >
+                        {
+                          //end of animation
+                        }
+                        <img
+                          className={
+                            subtitleToggle[dropdown.position] === true
+                              ? "about-arrow-icon about-icon-rotate"
+                              : "about-arrow-icon"
+                          }
+                          src={arrowRight}
+                          alt="arrow"
+                        />
+                        <img
+                          className="about-folder-icon"
+                          src={urlFor(dropdown.icon)}
+                          alt="icon"
+                        />
+                        <h2
+                          className={
+                            subtitleToggle[dropdown.position] === true
+                              ? "about-subtitle selected"
+                              : "about-subtitle"
+                          }
+                        >
+                          {dropdown.subtitle}
+                        </h2>
+                      </motion.section>
+                    )}
+                  </AnimatePresence>
 
                   {dropdown.aboutItem?.map((aboutItem, itemIndex) => (
-                    <div
-                      className={
-                        subtitleToggle[dropdown.position] === true
-                          ? "visible about-item-container"
-                          : "hidden"
-                      }
-                      onClick={() => handleTextToggle(aboutItem._key)}
-                    >
-                      <img
-                        className="about-item-icon"
-                        src={urlFor(aboutItem.icon)}
-                        alt="item-icon"
-                      />
-                      <h3 className="about-item">{aboutItem.item}</h3>
-                    </div>
+                    <AnimatePresence initial={false}>
+                      {subtitleToggle[dropdown.position] && (
+                        <motion.section
+                          className="about-item-container"
+                          key="content"
+                          initial="collapsed"
+                          animate="open"
+                          exit="collapsed"
+                          variants={{
+                            open: {
+                              opacity: 1,
+                              height: 13,
+                              paddingBottom: "15px",
+                              fontSize: "16px",
+                            },
+                            collapsed: {
+                              opacity: 0,
+                              height: 0,
+                              paddingBottom: 0,
+                              fontSize: 0,
+                            },
+                          }}
+                          transition={{
+                            duration: 0.8,
+                            ease: [0, 0.62, 0.23, 0.98],
+                          }}
+                          onClick={() => handleTextToggle(aboutItem._key)}
+                        >
+                          <img
+                            className="about-item-icon"
+                            src={urlFor(aboutItem.icon)}
+                            alt="item-icon"
+                          />
+                          <h3 className="about-item">{aboutItem.item}</h3>
+                        </motion.section>
+                      )}
+                    </AnimatePresence>
                   ))}
                 </>
               ))}
@@ -217,7 +274,7 @@ const About = () => {
                   >
                     <div className="about-text-title">
                       <div className="title-desktop-container">
-                        <h1 className="about-title title-desktop">
+                        <h1 className="about-title tab-style">
                           <span className="slash">{"//"}</span> {aboutItem.item}{" "}
                         </h1>
                         <img
@@ -254,7 +311,7 @@ const About = () => {
                                       manageDetails(detailsToggle, "1")
                                     }
                                   >
-                                    <img src={chat} alt="chat" />
+                                    <img src={chatIcon} alt="chat" />
                                     <p className="details-chat">details</p>
                                   </div>
                                 </div>
@@ -294,7 +351,7 @@ const About = () => {
                                       manageDetails(detailsToggle, "2")
                                     }
                                   >
-                                    <img src={chat} alt="chat" />
+                                    <img src={chatIcon} alt="chat" />
                                     <p className="details-chat">details</p>
                                   </div>
                                 </div>
@@ -335,7 +392,7 @@ const About = () => {
           </>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

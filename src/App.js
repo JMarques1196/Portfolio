@@ -1,15 +1,12 @@
-import Header from "./containers/Header/header";
-import Navbar from "./components/nav/nav.jsx";
-import About from "./containers/About/about";
-import Projects from "./containers/Projects/projects.jsx";
-import Contacts from "./containers/Contact/contact.jsx";
+import { Nav } from "./components";
+import { Header, About, Contacts, Projects } from "./containers";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <div className="app">
       <Router>
-        <Navbar />
+        <Nav />
         <Routes>
           <Route exact path={"/"} element={<Header />} />
           <Route exact path={"/about"} element={<About />} />

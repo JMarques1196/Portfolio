@@ -62,7 +62,13 @@
     align-items: center;
     gap: 129px;
   }
+  .home-container {
+    padding-top: 0;
+    padding-left: 0;
+  }
+}
 
+@media only screen and (min-width: 1120px) {
   .home-game {
     display: flex;
     justify-content: center;
@@ -71,12 +77,5 @@
     background-image: url(../../assets/bg/snake-bg.svg);
     background-size: contain;
     background-repeat: no-repeat;
-  }
-}
-
-@media only screen and (min-width: 1194px) {
-  .home-container {
-    padding-top: 0;
-    padding-left: 0;
   }
 }

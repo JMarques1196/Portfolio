@@ -149,7 +149,7 @@ const Snake = () => {
           className={gameOver === true ? " start-game" : "hidden"}
           onClick={startGame}
         >
-          try again
+          Try Again!
         </button>
       </div>
       <div>

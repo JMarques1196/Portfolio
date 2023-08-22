@@ -8,6 +8,7 @@ nav {
 /*Desktop Exclusive */
 .nav-item a.active {
   border-bottom: 3px solid #fea55f;
+  transition: border 0.3s ease-out;
 }
 .nav-name {
   min-width: 288px;
@@ -146,6 +147,10 @@ ul {
     padding-left: 32px;
     padding-right: 32px;
     border-right: 1px solid #1e2d3d;
+  }
+  .nav-link:hover {
+    color: #fff;
+    transition: 0.3s ease-in-out;
   }
   .menu {
     display: none;

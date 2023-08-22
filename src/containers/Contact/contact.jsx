@@ -1,8 +1,9 @@
 import "./contact.css";
 import { useState } from "react";
 import { client } from "../../client";
-import externalLink from "../../assets/icons/external-link.svg";
-
+import { Footer } from "../../components";
+import { externalLink, closeButton } from "../../assets/icons";
+import { motion } from "framer-motion";
 const Contacts = () => {
   const lineNumbers = [
     "1",
@@ -90,7 +91,13 @@ const Contacts = () => {
   };
 
   return (
-    <div id="contacts">
+    <motion.div
+      id="contacts"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      <Footer />
       <div className="contacts-container">
         <h1 className="contacts">_contact-me</h1>
         {
@@ -152,6 +159,7 @@ const Contacts = () => {
         <div className="form-container">
           <div className="input-title-wrapper">
             <p className="input-container-title">contacts</p>
+            <img className="title-close" src={closeButton} alt="close" />
           </div>
           <div className="form-content">
             <div className="border-div">
@@ -296,7 +304,7 @@ const Contacts = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,6 +1,8 @@
 import "./nav.css";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import Footer from "../footer/footer";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
   const [toggled, setToggled] = useState(false);

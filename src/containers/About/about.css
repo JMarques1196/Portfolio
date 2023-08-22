@@ -21,20 +21,16 @@
   height: 31px;
   width: 100%;
   line-height: 31px;
-  color: #fff;
+  color: #607b96;
   background-color: #1e2d3d;
   margin-bottom: 3px;
   cursor: pointer;
 }
 .about-title-icon {
-  padding-left: 20px;
+  padding-left: 14.5px;
 }
 .about-title-open {
   margin-bottom: 16px;
-}
-.rotate {
-  transform: translate(25%, -30%) rotate(90deg);
-  transition: ease-in-out;
 }
 .about-title {
   padding-left: 12.33px;
@@ -45,11 +41,17 @@
   display: none;
 }
 .about-subtitle-container {
-  padding-bottom: 10px;
   display: flex;
 }
 .about-arrow-icon {
-  padding-left: 20px;
+  padding-left: 16px;
+  transition: all 0.3s ease-in-out;
+}
+.about-icon-rotate {
+  transform: translate(25%, -30%) rotate(90deg);
+  transition: all 0.3s ease-in-out;
+  padding-left: 8px;
+  margin-left: 8px;
 }
 .about-folder-icon {
   padding-left: 13px;
@@ -67,7 +69,7 @@
 }
 .about-item-container {
   padding-bottom: 10px;
-  padding-left: 45px;
+  padding-left: 42px;
   display: flex;
 }
 .about-text-container {
@@ -170,6 +172,11 @@ Desktop Styles
 /*
 need more breakpoints for images
 */
+@media only screen and (max-width: 821px) {
+  .tab-style {
+    color: #fff;
+  }
+}
 @media only screen and (min-width: 500px) {
   .about-image {
     width: 100%;
@@ -192,7 +199,6 @@ need more breakpoints for images
   }
   .about-icon-bar {
     margin-top: 56px;
-    margin-bottom: 50px;
     display: grid;
     justify-content: center;
     grid-template-rows: 40px 40px 40px;
@@ -206,7 +212,6 @@ need more breakpoints for images
   }
   .about-dropdown-container {
     margin-top: 56px;
-    margin-bottom: 50px;
     border-right: 1px solid #1e2d3d;
   }
   .about-title-container {
@@ -216,17 +221,24 @@ need more breakpoints for images
     width: 243px;
     border-bottom: 1px solid #1e2d3d;
   }
+  .about-title-container:hover {
+    color: #fff;
+    transition: 0.3s ease-in-out;
+  }
   .about-title-container:nth-child(1) {
     border-top: none;
   }
   .about-title-icon {
     padding-left: 14.5px;
   }
+  .about-subtitle:hover {
+    color: #fff;
+    transition: 0.3s ease-in-out;
+  }
   .about-text-container {
     display: block;
     padding-left: 0;
     padding-top: 56px;
-    margin-bottom: 50px;
     width: 100%;
     overflow: hidden;
   }
@@ -237,12 +249,11 @@ need more breakpoints for images
   }
   .title-desktop-container {
     display: flex;
-    border-right: 1px solid #1e2d3d;
   }
   .about-title-open {
     margin-bottom: 21px;
   }
-  .title-desktop {
+  .tab-style {
     height: 31px;
     line-height: 31px;
     color: #607b96;
@@ -253,7 +264,8 @@ need more breakpoints for images
   .title-close {
     display: block;
     margin-left: 49.1px;
-    margin-right: 12px;
+    padding-right: 11px;
+    border-right: 1px solid #1e2d3d;
   }
   .title-close:hover {
     cursor: pointer;

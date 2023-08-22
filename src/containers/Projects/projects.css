@@ -37,7 +37,7 @@
 }
 .rotate {
   transform: translate(25%, -30%) rotate(90deg);
-  transition: ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 .works-subtitle {
   padding-left: 12.33px;
