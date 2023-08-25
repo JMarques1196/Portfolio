@@ -7,19 +7,31 @@
 .gray {
   color: #607b96;
 }
+.selected {
+  color: #fff;
+}
 .contacts {
   font-size: 14px;
   color: #fff;
   padding-top: 77px;
   padding-left: 27px;
   padding-bottom: 28px;
+  position: sticky;
+  top: 0;
+  background-color: #011627;
+}
+.contact-selection-container {
+  position: sticky;
+  top: 119px;
+  background-color: #011627;
+  padding-bottom: 10px;
 }
 .contact-selection {
   display: flex;
   height: 31px;
   width: 100%;
   line-height: 31px;
-  color: #fff;
+  color: #607b96;
   background-color: #1e2d3d;
   margin-bottom: 3px;
   cursor: pointer;
@@ -27,7 +39,7 @@
 .contact-open {
   margin-bottom: 16px;
 }
-.contact-icon {
+.contact-icon-arrow {
   padding-left: 20px;
 }
 .rotate {
@@ -45,6 +57,7 @@
 }
 .contact-icon {
   padding-left: 28px;
+  fill: #607b96;
 }
 .contact-item {
   padding-left: 9px;
@@ -62,16 +75,23 @@
   display: grid;
   justify-items: center;
   gap: 18px;
+  padding-bottom: 75px;
+  padding-left: 27px;
+  padding-right: 27px;
 }
 .input-container-title {
   display: none;
 }
+.contacts-title-close {
+  display: none;
+}
 .input {
-  width: 291px;
+  width: 100%;
 }
 textarea {
   color: #607b96;
   font-size: 16px;
+  box-sizing: border-box;
   resize: none;
   text-align: center;
   padding: 0;
@@ -109,6 +129,12 @@ textarea {
   font-size: 14px;
   border: 1px solid #1e2d3d;
   border-radius: 8px;
+}
+.submit:hover {
+  color: #fea55f;
+  cursor: pointer;
+  scale: 1.01;
+  transition: all 0.3s ease-in-out;
 }
 .new-message {
   display: grid;
@@ -170,6 +196,17 @@ textarea {
     padding-top: 18px;
     padding-bottom: 27px;
   }
+  .contact-items-container:hover {
+    .contact-icon {
+      fill: #fff;
+      transition: all 0.3s ease-in-out;
+    }
+    .contact-item {
+      color: #fff;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
   .contacts {
     display: none;
   }
@@ -196,6 +233,13 @@ textarea {
     color: #607b96;
     text-align: center;
   }
+  .contacts-title-close {
+    display: grid;
+    align-items: center;
+    margin-left: 49.1px;
+    padding-right: 11px;
+    border-right: 1px solid #1e2d3d;
+  }
   .form-content {
     display: flex;
     width: 100%;
@@ -205,14 +249,21 @@ textarea {
     width: 50%;
     height: 100%;
     border-right: solid 1px #1e2d3d;
-    padding-top: 115px;
+    padding-top: 155px;
+    overflow-y: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .border-div::-webkit-scrollbar {
+    display: none;
   }
   .form {
-    margin-top: 60px;
+    margin-bottom: 250px;
     justify-content: center;
     max-width: 100%;
+    padding-bottom: 0;
     padding-left: 15px;
-    padding-right: 30px;
+    padding-right: 15px;
   }
   .input {
     width: 100%;
@@ -230,9 +281,15 @@ textarea {
   .form-animation {
     display: flex;
     justify-content: center;
-    margin-top: 60px;
     width: 50%;
-    padding-top: 115px;
+    padding-top: 155px;
+    margin-bottom: 250px;
+    overflow-y: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .form-animation::-webkit-scrollbar {
+    display: none;
   }
   .lineNumbers {
     font-size: 16px;

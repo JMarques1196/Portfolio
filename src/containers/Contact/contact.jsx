@@ -2,7 +2,8 @@ import "./contact.css";
 import { useState } from "react";
 import { client } from "../../client";
 import { Footer } from "../../components";
-import { externalLink, closeButton } from "../../assets/icons";
+import { ReactComponent as CloseButton } from "../../assets/icons/close-button.svg";
+import { ReactComponent as ExternalLink } from "../../assets/icons/external-link.svg";
 import { motion } from "framer-motion";
 const Contacts = () => {
   const lineNumbers = [
@@ -54,7 +55,6 @@ const Contacts = () => {
     message: "",
   });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
 
   const { username = "", email = "", message = "" } = formData;
 
@@ -72,8 +72,6 @@ const Contacts = () => {
   };
 
   const handleSubmit = () => {
-    setLoading(true);
-
     const contact = {
       _type: "contact",
       name: formData.username,
@@ -84,7 +82,6 @@ const Contacts = () => {
     client
       .create(contact)
       .then(() => {
-        setLoading(false);
         setIsFormSubmitted(true);
       })
       .catch((err) => console.log(err));
@@ -107,7 +104,7 @@ const Contacts = () => {
           <div
             className={
               contactToggle[0] === true
-                ? "contact-selection contact-open"
+                ? "contact-selection contact-open selected"
                 : "contact-selection"
             }
             onClick={() => {
@@ -117,23 +114,23 @@ const Contacts = () => {
             <i
               className={
                 contactToggle[0] === true
-                  ? "ri-arrow-right-s-fill contact-icon rotate"
-                  : "ri-arrow-right-s-fill contact-icon"
+                  ? "ri-arrow-right-s-fill contact-icon-arrow rotate"
+                  : "ri-arrow-right-s-fill contact-icon-arrow"
               }
             ></i>
             <h2 className="contact-title">contacts</h2>
           </div>
-          {contactToggle[0] === true ? (
+          {contactToggle[0] && (
             <div className="contact-items-container">
-              <img className="contact-icon" src={externalLink} alt="link" />
+              <ExternalLink className="contact-icon" />
               <h2 className="contact-item">placeholder</h2>
             </div>
-          ) : null}
+          )}
 
           <div
             className={
               contactToggle[1] === true
-                ? "contact-selection contact-open"
+                ? "contact-selection contact-open selected"
                 : "contact-selection"
             }
             onClick={() => {
@@ -143,23 +140,25 @@ const Contacts = () => {
             <i
               className={
                 contactToggle[1] === true
-                  ? "ri-arrow-right-s-fill contact-icon rotate"
-                  : "ri-arrow-right-s-fill contact-icon"
+                  ? "ri-arrow-right-s-fill contact-icon-arrow rotate"
+                  : "ri-arrow-right-s-fill contact-icon-arrow"
               }
             ></i>
             <h2 className="contact-title">find-me-also-in</h2>
           </div>
-          {contactToggle[1] === true ? (
+          {contactToggle[1] && (
             <div className="contact-items-container">
-              <img className="contact-icon" src={externalLink} alt="link" />
+              <ExternalLink className="contact-icon" />
               <h2 className="contact-item">placeholder</h2>
             </div>
-          ) : null}
+          )}
         </div>
         <div className="form-container">
           <div className="input-title-wrapper">
             <p className="input-container-title">contacts</p>
-            <img className="title-close" src={closeButton} alt="close" />
+            <div className="contacts-title-close">
+              <CloseButton />
+            </div>
           </div>
           <div className="form-content">
             <div className="border-div">

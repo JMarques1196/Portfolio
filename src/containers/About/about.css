@@ -12,9 +12,18 @@
   padding-top: 77px;
   padding-left: 27px;
   padding-bottom: 28px;
+  position: sticky;
+  top: 0;
+  background-color: #011627;
 }
 .about-icon-bar {
   display: none;
+}
+.about-dropdown-container {
+  position: sticky;
+  top: 119px;
+  background-color: #011627;
+  padding-bottom: 10px;
 }
 .about-title-container {
   display: flex;
@@ -26,8 +35,11 @@
   margin-bottom: 3px;
   cursor: pointer;
 }
+.about-title-container-boder {
+  border-top: 1px solid #607b96;
+}
 .about-title-icon {
-  padding-left: 14.5px;
+  padding-left: 20px;
 }
 .about-title-open {
   margin-bottom: 16px;
@@ -51,7 +63,7 @@
   transform: translate(25%, -30%) rotate(90deg);
   transition: all 0.3s ease-in-out;
   padding-left: 8px;
-  margin-left: 8px;
+  margin-left: 12px;
 }
 .about-folder-icon {
   padding-left: 13px;
@@ -69,7 +81,7 @@
 }
 .about-item-container {
   padding-bottom: 10px;
-  padding-left: 42px;
+  padding-left: 46px;
   display: flex;
 }
 .about-text-container {
@@ -117,6 +129,11 @@
   display: grid;
   justify-content: center;
   width: 100%;
+}
+.scroll-wrapper {
+  margin-bottom: 75px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .details-container {
   margin-bottom: 12px;
@@ -172,7 +189,7 @@ Desktop Styles
 /*
 need more breakpoints for images
 */
-@media only screen and (max-width: 821px) {
+@media only screen and (max-width: 950px) {
   .tab-style {
     color: #fff;
   }
@@ -186,12 +203,13 @@ need more breakpoints for images
     max-width: 400px;
   }
 }
-@media only screen and (min-width: 821px) {
+@media only screen and (min-width: 950px) {
   #about {
     height: 100vh;
   }
   .about-me {
     display: none;
+    position: initial;
   }
   .about-container {
     display: flex;
@@ -213,6 +231,7 @@ need more breakpoints for images
   .about-dropdown-container {
     margin-top: 56px;
     border-right: 1px solid #1e2d3d;
+    position: initial;
   }
   .about-title-container {
     justify-content: flex-start;
@@ -228,9 +247,7 @@ need more breakpoints for images
   .about-title-container:nth-child(1) {
     border-top: none;
   }
-  .about-title-icon {
-    padding-left: 14.5px;
-  }
+
   .about-subtitle:hover {
     color: #fff;
     transition: 0.3s ease-in-out;
@@ -241,6 +258,10 @@ need more breakpoints for images
     padding-top: 56px;
     width: 100%;
     overflow: hidden;
+  }
+  .about-item:hover {
+    color: #fff;
+    transition: all 0.3s ease-in-out;
   }
   .about-text-title {
     padding: 0;
@@ -278,9 +299,21 @@ need more breakpoints for images
     height: 100%;
     box-sizing: border-box;
   }
+  .about-text-content-wrapper {
+    padding-top: 80px;
+    margin-bottom: 100px;
+    display: flex;
+    width: 50%;
+    overflow-y: scroll;
+    border-right: 1px solid #1e2d3d;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .about-text-content-wrapper::-webkit-scrollbar {
+    display: none;
+  }
   .lineNumbers-container {
     width: 100px;
-    padding-top: 80px;
     display: grid;
     justify-items: center;
     grid-template-rows: repeat(16, 27px);
@@ -289,23 +322,12 @@ need more breakpoints for images
     font-size: 18px;
     color: #607b96;
   }
-  .about-text-content {
-    width: 50%;
-    border-right: 1px solid #1e2d3d;
-  }
   .about-text {
-    height: 100%;
     padding-right: 50px;
-    padding-top: 80px;
     font-size: 18px;
     line-height: 150%;
-    overflow-y: scroll;
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
   }
-  .about-text::-webkit-scrollbar {
-    display: none;
-  }
+
   .about-images {
     padding-top: 0;
     display: block;

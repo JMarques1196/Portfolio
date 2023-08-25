@@ -52,6 +52,11 @@
   display: none;
 }
 /*Desktop */
+@media only screen and (max-width: 320px) {
+  #home {
+    overflow: scroll;
+  }
+}
 @media only screen and (min-width: 806px) {
   #home {
     background-image: url("../../assets/bg/desktop-bg.png");

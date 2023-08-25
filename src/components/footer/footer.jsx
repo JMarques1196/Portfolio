@@ -1,5 +1,8 @@
 import "./footer.css";
-import { insta, linkedin, stack, github } from "../../assets/icons/";
+import { ReactComponent as Insta } from "../../assets/icons/insta.svg";
+import { ReactComponent as Linkedin } from "../../assets/icons/linkedin.svg";
+import { ReactComponent as Stack } from "../../assets/icons/stack.svg";
+import { ReactComponent as Github } from "../../assets/icons/github.svg";
 
 const Footer = () => {
   return (
@@ -14,7 +17,7 @@ const Footer = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <img className="icon" src={insta} alt="instagram" />
+            <Insta className="icon" />
           </a>
         </div>
         <div className="icon-container">
@@ -23,7 +26,7 @@ const Footer = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <img className="icon" src={linkedin} alt="linkedin" />
+            <Linkedin className="icon" />
           </a>
         </div>
         <div className="icon-container">
@@ -32,7 +35,7 @@ const Footer = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <img className="icon" src={stack} alt="stack" />
+            <Stack className="icon" />
           </a>
         </div>
       </div>
@@ -51,7 +54,7 @@ const Footer = () => {
           target="_blank"
           rel="noreferrer"
         >
-          <img className="icon" src={github} alt="stack" />
+          <Github className="icon" />
         </a>
       </div>
     </div>

@@ -289,13 +289,15 @@ const About = () => {
                       </h2>
                     </div>
                     <div className="about-content-desktop">
-                      <div className="lineNumbers-container">
-                        {lineNumbers.map((lineNumber, number) => (
-                          <p className="lineNumbers">{lineNumber}</p>
-                        ))}
-                      </div>
-                      <div className="about-text-content">
-                        <p className="about-text">{aboutItem.text}</p>
+                      <div className="about-text-content-wrapper">
+                        <div className="lineNumbers-container">
+                          {lineNumbers.map((lineNumber, number) => (
+                            <p className="lineNumbers">{lineNumber}</p>
+                          ))}
+                        </div>
+                        <div className="about-text-content">
+                          <p className="about-text">{aboutItem.text}</p>
+                        </div>
                       </div>
                       <div className="about-images">
                         <h2 className="about-images-title">{"// Title"}</h2>

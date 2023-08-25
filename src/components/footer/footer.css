@@ -36,8 +36,12 @@
   border-right: 1px solid #1e2d3d;
 }
 .icon {
+  fill: #607b96;
 }
-
+.icon:hover {
+  fill: #fff;
+  transition: all 0.1s ease-in-out;
+}
 .icon-github-container {
   height: 100%;
   display: flex;
@@ -45,6 +49,16 @@
   justify-content: center;
   border-left: 1px solid #1e2d3d;
   width: 180px;
+}
+.icon-github-container:hover {
+  .icon {
+    fill: #fff;
+    transition: all 0.1s ease-in-out;
+  }
+  .title {
+    color: #fff;
+    transition: all 0.1s ease-in-out;
+  }
 }
 .git-gap {
   padding-right: 5px;

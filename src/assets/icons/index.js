@@ -20,3 +20,4 @@ export { default as react } from "./react.svg";
 export { default as settings } from "./settings.svg";
 export { default as stack } from "./stack.svg";
 export { default as terminal } from "./terminal.svg";
+export { default as githubWhite } from "./github-white.svg";

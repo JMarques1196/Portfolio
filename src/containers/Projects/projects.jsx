@@ -13,8 +13,9 @@ import {
   cssBlack,
   cmsBlack,
   closeButton,
+  githubWhite,
 } from "../../assets/icons";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Projects = () => {
   const filterItems = ["All", "Javascript", "React JS", "CMS", "CSS"];
@@ -110,7 +111,7 @@ const Projects = () => {
             <div
               className={
                 toggle === true
-                  ? "works-subtitle-container works-subtitle-open"
+                  ? "works-subtitle-container works-subtitle-open selected"
                   : "works-subtitle-container"
               }
               onClick={() => setToggle(!toggle)}
@@ -118,32 +119,61 @@ const Projects = () => {
               <i
                 className={
                   toggle === true
-                    ? "ri-arrow-right-s-fill works-subtitle-icon rotate"
+                    ? "ri-arrow-right-s-fill works-subtitle-icon rotate "
                     : "ri-arrow-right-s-fill works-subtitle-icon"
                 }
               ></i>
               <h1 className="works-subtitle">projects</h1>
             </div>
 
-            <div className={toggle === true ? "works-filter" : "hide-filter"}>
+            <div className={toggle && "works-filter"}>
               {
                 // We will map each item into the filter function
                 filterItems.map((item, index) => (
-                  <label key={index} className="works-filter-item">
-                    <input
-                      className="works-checkbox"
-                      value={item}
-                      type="checkbox"
-                      checked={checked[index]}
-                      onChange={() => handleOnChange(index, item)}
-                    />
-                    <img
-                      className="works-checkbox-icon"
-                      src={itemsIcons[index]}
-                      alt="icon"
-                    />
-                    {item}
-                  </label>
+                  <AnimatePresence initial={false}>
+                    {toggle && (
+                      //animations, same for all dropdowns
+                      <motion.section
+                        className="works-filter-item"
+                        key="content"
+                        initial="collapsed"
+                        animate="open"
+                        exit="collapsed"
+                        variants={{
+                          open: {
+                            opacity: 1,
+                            height: 13,
+                            paddingBottom: "15px",
+                            fontSize: "16px",
+                          },
+                          collapsed: {
+                            opacity: 0,
+                            height: 0,
+                            paddingBottom: 0,
+                            fontSize: 0,
+                          },
+                        }}
+                        transition={{
+                          duration: 0.3,
+                          ease: [0, 0.62, 0.23, 0.98],
+                        }}
+                      >
+                        <input
+                          className="works-checkbox"
+                          value={item}
+                          type="checkbox"
+                          checked={checked[index]}
+                          onChange={() => handleOnChange(index, item)}
+                        />
+                        <img
+                          className="works-checkbox-icon"
+                          src={itemsIcons[index]}
+                          alt="icon"
+                        />
+                        {item}
+                      </motion.section>
+                    )}
+                  </AnimatePresence>
                 ))
               }
             </div>
@@ -153,14 +183,25 @@ const Projects = () => {
           // active filters display
         }
         <div className="works-selected-container">
-          <div className="works-active-filters-container">
-            <h3 className="works-active-filters-title">{"//"} projects </h3>
-            {activeFilters?.map((item) => (
-              // display filters that are currently active
-              <p className="works-active-filters">/ {item}; </p>
-            ))}
-            <img className="title-close" src={closeButton} alt="close" />
-          </div>
+          {activeFilters.length !== 0 && (
+            <div className="works-active-filters-container">
+              <h3 className="works-active-filters-title">{"//"} projects </h3>
+              {activeFilters?.map((item) => (
+                // display filters that are currently active
+                <p className="works-active-filters">/ {item}; </p>
+              ))}
+              <img
+                className="projects-title-close"
+                src={closeButton}
+                alt="close"
+                onClick={() => {
+                  setActiveFilters([]);
+                  setFilterWork([]);
+                  setChecked([false, false, false, false, false]);
+                }}
+              />
+            </div>
+          )}
           {
             // cards
           }
@@ -207,10 +248,21 @@ const Projects = () => {
                   </div>
                   <div className="card-description">
                     <p className="card-text">{item.description}</p>
-                    <div className="card-link-container">
-                      <a className="card-link" href="#" aria-label={item.title}>
-                        view-project
-                      </a>
+                    <div className="links-wrapper">
+                      <div className="card-link-container">
+                        <a
+                          className="card-link"
+                          href="#"
+                          aria-label={item.title}
+                        >
+                          view-project
+                        </a>
+                      </div>
+                      <div className="card-git">
+                        <a href="#">
+                          <img src={githubWhite} alt="git" />
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
