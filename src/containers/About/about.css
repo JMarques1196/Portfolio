@@ -1,10 +1,5 @@
 /* Common Styles */
-.visible {
-  display: block;
-}
-.hidden {
-  display: none;
-}
+
 /* mobile view */
 .about-me {
   font-size: 14px;
@@ -34,9 +29,6 @@
   background-color: #1e2d3d;
   margin-bottom: 3px;
   cursor: pointer;
-}
-.about-title-container-boder {
-  border-top: 1px solid #607b96;
 }
 .about-title-icon {
   padding-left: 20px;
@@ -84,10 +76,12 @@
   padding-left: 46px;
   display: flex;
 }
+
 .about-text-container {
   padding-top: 38px;
   display: grid;
   width: 100%;
+  background-color: #011627;
 }
 .about-item {
   color: #607b96;
@@ -180,8 +174,14 @@
   width: 100%;
   color: #607b96;
 }
+.close-button {
+  fill: #607b96;
+}
 .close-button:hover {
   cursor: pointer;
+  fill: #fff;
+  scale: 1.01;
+  transition: all 0.3s ease-in-out;
 }
 /*
 Desktop Styles
@@ -206,6 +206,11 @@ need more breakpoints for images
 @media only screen and (min-width: 950px) {
   #about {
     height: 100vh;
+    /* background-image: url("../../assets/bg/logo.svg");
+   */
+    background-size: 40;
+    background-repeat: no-repeat;
+    background-position: bottom 100px right 70px;
   }
   .about-me {
     display: none;
@@ -236,18 +241,23 @@ need more breakpoints for images
   .about-title-container {
     justify-content: flex-start;
     background: none;
-    margin: 0;
     width: 243px;
     border-bottom: 1px solid #1e2d3d;
+    border-top: 1px solid #1e2d3d;
   }
+  .about-title-container:nth-child(1) {
+    border-bottom: 0px solid #1e2d3d;
+    border-top: none;
+  }
+
   .about-title-container:hover {
     color: #fff;
     transition: 0.3s ease-in-out;
   }
-  .about-title-container:nth-child(1) {
-    border-top: none;
+  .about-title-open:nth-child(1) {
+    border-bottom: 1px solid #1e2d3d;
+    transition: all 0.01s ease-in-out;
   }
-
   .about-subtitle:hover {
     color: #fff;
     transition: 0.3s ease-in-out;
@@ -283,10 +293,17 @@ need more breakpoints for images
     display: none;
   }
   .title-close {
+    height: 100%;
     display: block;
     margin-left: 49.1px;
     padding-right: 11px;
     border-right: 1px solid #1e2d3d;
+    fill: #607b96;
+  }
+  .title-close:hover {
+    fill: #fff;
+    scale: 1.01;
+    transition: all 0.3s ease-in-out;
   }
   .title-close:hover {
     cursor: pointer;

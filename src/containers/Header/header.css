@@ -71,6 +71,10 @@
     padding-top: 0;
     padding-left: 0;
   }
+  .home-github-a:hover {
+    color: #c98bdf;
+    transition: all 0.3s ease-in-out;
+  }
 }
 
 @media only screen and (min-width: 1120px) {

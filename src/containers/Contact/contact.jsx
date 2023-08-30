@@ -4,7 +4,7 @@ import { client } from "../../client";
 import { Footer } from "../../components";
 import { ReactComponent as CloseButton } from "../../assets/icons/close-button.svg";
 import { ReactComponent as ExternalLink } from "../../assets/icons/external-link.svg";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 const Contacts = () => {
   const lineNumbers = [
     "1",
@@ -120,12 +120,39 @@ const Contacts = () => {
             ></i>
             <h2 className="contact-title">contacts</h2>
           </div>
-          {contactToggle[0] && (
-            <div className="contact-items-container">
-              <ExternalLink className="contact-icon" />
-              <h2 className="contact-item">placeholder</h2>
-            </div>
-          )}
+          <AnimatePresence initial={false}>
+            {contactToggle[0] && (
+              <motion.div
+                div
+                className="contact-items-container"
+                key="content"
+                initial="collapsed"
+                animate="open"
+                exit="collapsed"
+                variants={{
+                  open: {
+                    opacity: 1,
+                    height: 13,
+                    paddingBottom: "15px",
+                    fontSize: "16px",
+                  },
+                  collapsed: {
+                    opacity: 0,
+                    height: 0,
+                    paddingBottom: 0,
+                    fontSize: 0,
+                  },
+                }}
+                transition={{
+                  duration: 0.8,
+                  ease: [0, 0.62, 0.23, 0.98],
+                }}
+              >
+                <ExternalLink className="contact-icon" />
+                <h2 className="contact-item">placeholder</h2>
+              </motion.div>
+            )}
+          </AnimatePresence>
 
           <div
             className={
@@ -146,12 +173,39 @@ const Contacts = () => {
             ></i>
             <h2 className="contact-title">find-me-also-in</h2>
           </div>
-          {contactToggle[1] && (
-            <div className="contact-items-container">
-              <ExternalLink className="contact-icon" />
-              <h2 className="contact-item">placeholder</h2>
-            </div>
-          )}
+          <AnimatePresence initial={false}>
+            {contactToggle[1] && (
+              <motion.div
+                div
+                className="contact-items-container"
+                key="content"
+                initial="collapsed"
+                animate="open"
+                exit="collapsed"
+                variants={{
+                  open: {
+                    opacity: 1,
+                    height: 13,
+                    paddingBottom: "15px",
+                    fontSize: "16px",
+                  },
+                  collapsed: {
+                    opacity: 0,
+                    height: 0,
+                    paddingBottom: 0,
+                    fontSize: 0,
+                  },
+                }}
+                transition={{
+                  duration: 0.8,
+                  ease: [0, 0.62, 0.23, 0.98],
+                }}
+              >
+                <ExternalLink className="contact-icon" />
+                <h2 className="contact-item">placeholder</h2>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
         <div className="form-container">
           <div className="input-title-wrapper">

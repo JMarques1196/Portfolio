@@ -188,12 +188,18 @@ textarea {
   .contact-selection {
     justify-content: flex-start;
     background: none;
-    margin: 0;
     width: 312px;
     border-bottom: 1px solid #1e2d3d;
+    border-top: 1px solid #1e2d3d;
+  }
+  .contact-selection:nth-child(1) {
+    border-bottom: 0px solid #1e2d3d;
+  }
+  .contact-open:nth-child(1) {
+    border-bottom: 1px solid #1e2d3d;
+    transition: all 0.01s ease-in-out;
   }
   .contact-items-container {
-    padding-top: 18px;
     padding-bottom: 27px;
   }
   .contact-items-container:hover {
@@ -235,6 +241,7 @@ textarea {
   }
   .contacts-title-close {
     display: grid;
+    fill: #607b96;
     align-items: center;
     margin-left: 49.1px;
     padding-right: 11px;

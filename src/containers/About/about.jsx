@@ -7,8 +7,8 @@ import {
   gamepad,
   settings,
   chatIcon,
-  closeButton,
 } from "../../assets/icons";
+import { ReactComponent as CloseButton } from "../../assets/icons/close-button.svg";
 import { Footer } from "../../components";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -127,8 +127,7 @@ const About = () => {
         <div className="about-dropdown-container">
           {about.map((about, index) => (
             <>
-              <motion.div
-                whileTap={{ scale: 0.97 }}
+              <div
                 className={
                   titleToggle[index] === true
                     ? "about-title-container about-title-open selected"
@@ -147,7 +146,7 @@ const About = () => {
                   }
                 ></i>
                 <h2 className="about-title">{about.title}</h2>
-              </motion.div>
+              </div>
               {
                 // Section Title
               }
@@ -264,131 +263,123 @@ const About = () => {
           <>
             {about.aboutDropdown?.map((dropdown, subtitleIndex) => (
               <>
-                {dropdown.aboutItem?.map((aboutItem, itemIndex) => (
-                  <div
-                    className={
-                      textToggled.key === aboutItem._key
-                        ? "visible about-text-container"
-                        : "hidden"
-                    }
-                  >
-                    <div className="about-text-title">
-                      <div className="title-desktop-container">
-                        <h1 className="about-title tab-style">
-                          <span className="slash">{"//"}</span> {aboutItem.item}{" "}
-                        </h1>
-                        <img
-                          className="title-close"
-                          src={closeButton}
-                          alt="close"
-                          onClick={() => handleTextToggle(aboutItem._key)}
-                        />
-                      </div>
-                      <h2 className="about-subtitle subtitle-desktop">
-                        / {dropdown.subtitle}
-                      </h2>
-                    </div>
-                    <div className="about-content-desktop">
-                      <div className="about-text-content-wrapper">
-                        <div className="lineNumbers-container">
-                          {lineNumbers.map((lineNumber, number) => (
-                            <p className="lineNumbers">{lineNumber}</p>
-                          ))}
+                {dropdown.aboutItem?.map(
+                  (aboutItem, itemIndex) =>
+                    textToggled.key === aboutItem._key && (
+                      <div className=" about-text-container">
+                        <div className="about-text-title">
+                          <div className="title-desktop-container">
+                            <h1 className="about-title tab-style">
+                              <span className="slash">{"//"}</span>{" "}
+                              {aboutItem.item}{" "}
+                            </h1>
+                            <CloseButton
+                              className="title-close"
+                              onClick={() => handleTextToggle(aboutItem._key)}
+                            />
+                          </div>
+                          <h2 className="about-subtitle subtitle-desktop">
+                            / {dropdown.subtitle}
+                          </h2>
                         </div>
-                        <div className="about-text-content">
-                          <p className="about-text">{aboutItem.text}</p>
-                        </div>
-                      </div>
-                      <div className="about-images">
-                        <h2 className="about-images-title">{"// Title"}</h2>
-                        <div className="about-images-container">
-                          <div className="scroll-wrapper">
-                            {aboutItem.imageOne ? (
-                              <>
-                                <div className="details-container">
-                                  <div className="about-profile-pic"></div>
-                                  <div
-                                    className="details-chat-container"
-                                    onClick={() =>
-                                      manageDetails(detailsToggle, "1")
-                                    }
-                                  >
-                                    <img src={chatIcon} alt="chat" />
-                                    <p className="details-chat">details</p>
-                                  </div>
-                                </div>
-                                <img
-                                  className="about-image"
-                                  src={urlFor(aboutItem.imageOne)}
-                                  alt="im1"
-                                />
-                                <div
-                                  className={
-                                    detailsToggle[0] === true
-                                      ? "details-text-container"
-                                      : "hidden"
-                                  }
-                                >
-                                  <p className="details-text">
-                                    This is a lorem fucking Ipsum
-                                  </p>
-                                  <img
-                                    className="close-button"
-                                    src={closeButton}
-                                    alt="close"
-                                    onClick={() =>
-                                      manageDetails(detailsToggle, "1")
-                                    }
-                                  />
-                                </div>
-                              </>
-                            ) : null}
-                            {aboutItem.imageTwo ? (
-                              <>
-                                <div className="details-container">
-                                  <div className="about-profile-pic"></div>
-                                  <div
-                                    className="details-chat-container"
-                                    onClick={() =>
-                                      manageDetails(detailsToggle, "2")
-                                    }
-                                  >
-                                    <img src={chatIcon} alt="chat" />
-                                    <p className="details-chat">details</p>
-                                  </div>
-                                </div>
-                                <img
-                                  className="about-image"
-                                  src={urlFor(aboutItem.imageTwo)}
-                                  alt="im2"
-                                />
-                                <div
-                                  className={
-                                    detailsToggle[1] === true
-                                      ? "details-text-container"
-                                      : "hidden"
-                                  }
-                                >
-                                  <p className="details-text">
-                                    This is a lorem fucking Ipsum
-                                  </p>
-                                  <img
-                                    className="close-button"
-                                    src={closeButton}
-                                    alt="close"
-                                    onClick={() =>
-                                      manageDetails(detailsToggle, "2")
-                                    }
-                                  />
-                                </div>
-                              </>
-                            ) : null}
+                        <div className="about-content-desktop">
+                          <div className="about-text-content-wrapper">
+                            <div className="lineNumbers-container">
+                              {lineNumbers.map((lineNumber, number) => (
+                                <p className="lineNumbers">{lineNumber}</p>
+                              ))}
+                            </div>
+                            <div className="about-text-content">
+                              <p className="about-text">{aboutItem.text}</p>
+                            </div>
+                          </div>
+                          <div className="about-images">
+                            <h2 className="about-images-title">{"// Title"}</h2>
+                            <div className="about-images-container">
+                              <div className="scroll-wrapper">
+                                {aboutItem.imageOne ? (
+                                  <>
+                                    <div className="details-container">
+                                      <div className="about-profile-pic"></div>
+                                      <div
+                                        className="details-chat-container"
+                                        onClick={() =>
+                                          manageDetails(detailsToggle, "1")
+                                        }
+                                      >
+                                        <img src={chatIcon} alt="chat" />
+                                        <p className="details-chat">details</p>
+                                      </div>
+                                    </div>
+                                    <img
+                                      className="about-image"
+                                      src={urlFor(aboutItem.imageOne)}
+                                      alt="im1"
+                                    />
+                                    <div
+                                      className={
+                                        detailsToggle[0] === true
+                                          ? "details-text-container"
+                                          : "hidden"
+                                      }
+                                    >
+                                      <p className="details-text">
+                                        This is a lorem fucking Ipsum
+                                      </p>
+                                      <CloseButton
+                                        className="close-button"
+                                        onClick={() =>
+                                          manageDetails(detailsToggle, "1")
+                                        }
+                                      />
+                                    </div>
+                                  </>
+                                ) : null}
+                                {aboutItem.imageTwo ? (
+                                  <>
+                                    <div className="details-container">
+                                      <div className="about-profile-pic"></div>
+                                      <div
+                                        className="details-chat-container"
+                                        onClick={() =>
+                                          manageDetails(detailsToggle, "2")
+                                        }
+                                      >
+                                        <img src={chatIcon} alt="chat" />
+                                        <p className="details-chat">details</p>
+                                      </div>
+                                    </div>
+                                    <img
+                                      className="about-image"
+                                      src={urlFor(aboutItem.imageTwo)}
+                                      alt="im2"
+                                    />
+                                    <div
+                                      className={
+                                        detailsToggle[1] === true
+                                          ? "details-text-container"
+                                          : "hidden"
+                                      }
+                                    >
+                                      <p className="details-text">
+                                        This is a lorem fucking Ipsum
+                                      </p>
+                                      <CloseButton
+                                        className="close-button"
+                                        onClick={() =>
+                                          manageDetails(detailsToggle, "2")
+                                        }
+                                      />
+                                    </div>
+                                  </>
+                                ) : null}
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                ))}
+                    )
+                )}
               </>
             ))}
           </>

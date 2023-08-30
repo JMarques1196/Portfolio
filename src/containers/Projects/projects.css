@@ -114,6 +114,7 @@ input[type="checkbox"]:checked {
 .works-active-filters-container {
   display: flex;
   flex-wrap: wrap;
+  height: 31px;
 }
 .works-active-filters-title {
   color: #fff;
@@ -281,10 +282,17 @@ input[type="checkbox"]:checked {
   }
   .projects-title-close {
     display: block;
+    height: 100%;
+    fill: #607b96;
     margin-left: 49.1px;
     padding-right: 11px;
     border-right: 1px solid #1e2d3d;
     cursor: pointer;
+  }
+  .projects-title-close:hover {
+    fill: #fff;
+    scale: 1.01;
+    transition: all 0.3s ease-in-out;
   }
   .works-filter {
     display: block;

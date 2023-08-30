@@ -12,9 +12,9 @@ import {
   reactBlack,
   cssBlack,
   cmsBlack,
-  closeButton,
   githubWhite,
 } from "../../assets/icons";
+import { ReactComponent as CloseButton } from "../../assets/icons/close-button.svg";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Projects = () => {
@@ -190,9 +190,8 @@ const Projects = () => {
                 // display filters that are currently active
                 <p className="works-active-filters">/ {item}; </p>
               ))}
-              <img
+              <CloseButton
                 className="projects-title-close"
-                src={closeButton}
                 alt="close"
                 onClick={() => {
                   setActiveFilters([]);
