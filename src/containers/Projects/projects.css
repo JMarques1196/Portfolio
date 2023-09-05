@@ -18,23 +18,23 @@
   top: 0;
   background-color: #011627;
   z-index: 1;
-  padding-bottom: 38px;
+  padding-bottom: 2.375rem;
 }
 .works-title {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #fff;
-  padding-top: 77px;
-  padding-left: 27px;
-  padding-bottom: 28px;
+  padding-top: 4.813rem;
+  padding-left: 1.688rem;
+  padding-bottom: 1.75rem;
 }
 .works-subtitle-container {
   display: flex;
-  height: 31px;
+  height: 1.938rem;
   width: 100%;
-  line-height: 31px;
+  line-height: 1.938rem;
   color: #607b96;
   background-color: #1e2d3d;
-  margin-bottom: 3px;
+  margin-bottom: 0.188rem;
   cursor: pointer;
 }
 .works-subtitle-container:hover {
@@ -45,23 +45,23 @@
   color: #fff;
 }
 .works-subtitle-icon {
-  padding-left: 20px;
+  padding-left: 1.25rem;
 }
 .works-subtitle-open {
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 }
 .rotate {
   transform: translate(25%, -30%) rotate(90deg);
   transition: 0.3s ease-in-out;
 }
 .works-subtitle {
-  padding-left: 12.33px;
-  font-size: 16px;
+  padding-left: 0.771rem;
+  font-size: 1rem;
   font-weight: 400;
 }
 .works-filter {
   display: grid;
-  gap: 17.5px;
+  gap: 1.094rem;
 }
 
 .hide-filter {
@@ -70,9 +70,7 @@
 .works-filter-item {
   display: flex;
   align-items: center;
-  height: 24px;
   color: #607b96;
-  font-size: 16px;
   font-weight: 400;
 }
 
@@ -86,9 +84,9 @@ input[type="checkbox"] {
   appearance: none;
   border: 1px solid #607b96;
   border-radius: 2px;
-  width: 19px;
-  height: 19px;
-  margin-left: 27.5px;
+  width: 1.188rem;
+  height: 1.188rem;
+  margin-left: 1.719rem;
 }
 
 input[type="checkbox"]:checked {
@@ -100,8 +98,8 @@ input[type="checkbox"]:checked {
 }
 
 .works-checkbox-icon {
-  margin-left: 25.5px;
-  margin-right: 10px;
+  margin-left: 1.594rem;
+  margin-right: 0.625rem;
 }
 .works-selected-container::-webkit-scrollbar {
   display: none;
@@ -114,21 +112,21 @@ input[type="checkbox"]:checked {
 .works-active-filters-container {
   display: flex;
   flex-wrap: wrap;
-  height: 31px;
+  height: 1.938rem;
 }
 .works-active-filters-title {
   color: #fff;
   text-align: center;
-  font-size: 16px;
-  line-height: 32px;
+  font-size: 1rem;
+  line-height: 2rem;
   font-weight: 400;
-  padding-left: 27px;
+  padding-left: 1.688rem;
 }
 .works-active-filters {
-  font-size: 16px;
-  line-height: 31px;
+  font-size: 1rem;
+  line-height: 1.938rem;
   font-weight: 400;
-  padding-left: 12px;
+  padding-left: 0.75rem;
   color: #607b96;
   text-align: center;
 }
@@ -139,65 +137,67 @@ input[type="checkbox"]:checked {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 40px;
-  margin-bottom: 75px;
+  gap: 2.5rem;
+  margin-bottom: 4.688rem;
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+  padding-top: 5rem;
 }
 .card-container {
-  padding-top: 20px;
-  width: 291px;
+  width: 18.118rem;
 }
 .card-title-container {
   display: flex;
   flex-wrap: wrap;
-  padding-bottom: 15px;
+  padding-bottom: 0.938rem;
 }
 .card-title {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
   color: #5565e8;
 }
 .card-tag {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
-  padding-left: 12px;
+  padding-left: 0.75rem;
   color: #607b96;
 }
 .card-media-container {
   background-color: #011221;
   width: 100%;
-  height: 328px;
+  height: 20.5rem;
   border: 1px solid #1e2d3d;
-  border-radius: 10px;
+  border-radius: 0.625rem;
 }
 .card-img-container {
   position: relative;
 }
 .card-img {
   width: 100%;
-  height: 146px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  height: 9.125rem;
+  border-top-left-radius: 0.625rem;
+  border-top-right-radius: 0.625rem;
 }
 .card-icon {
-  width: 28px;
-  height: 28px;
+  width: 1.75rem;
+  height: 1.75rem;
   position: absolute;
   fill: #011221;
-  top: 17px;
-  right: 17px;
+  top: 1.063rem;
+  right: 1.063rem;
   border-radius: 4px;
 }
 .card-description {
   width: 100%;
-  height: 182px;
+  height: 11.375rem;
   display: grid;
   justify-items: start;
 }
 .card-text {
-  padding-top: 29px;
+  padding-top: 1.813rem;
   color: #607b96;
-  padding-left: 31px;
-  padding-right: 31px;
+  padding-left: 1.938rem;
+  padding-right: 1.938rem;
 }
 .links-wrapper {
   display: flex;
@@ -205,19 +205,19 @@ input[type="checkbox"]:checked {
   width: 100%;
 }
 .card-link-container {
-  width: 129px;
-  height: 38px;
+  width: 8.063rem;
+  height: 2.375rem;
   background-color: #1c2b3a;
   display: grid;
   justify-items: center;
   align-content: center;
-  margin-left: 31px;
-  margin-right: 31px;
-  border-radius: 10px;
+  margin-left: 1.938rem;
+  margin-right: 1.938rem;
+  border-radius: 0.625rem;
   cursor: pointer;
 }
 .card-link {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 400;
   color: #fff;
 }
@@ -226,7 +226,7 @@ input[type="checkbox"]:checked {
   transition: all 0.3s ease-in-out;
 }
 .card-git {
-  margin-right: 31px;
+  margin-right: 1.938rem;
 }
 .card-git:hover {
   scale: 1.1;
@@ -251,19 +251,19 @@ input[type="checkbox"]:checked {
   }
   .works-filter-container {
     height: auto;
-    margin-top: 57px;
+    margin-top: 3.563rem;
   }
   .works-subtitle-container {
     justify-content: flex-start;
     background: none;
     margin: 0;
-    width: 312px;
+    width: 19.5rem;
     border-bottom: 1px solid #1e2d3d;
   }
   .works-selected-container {
     position: relative;
     width: 100%;
-    margin-top: 57px;
+    margin-top: 3.563rem;
   }
   .works-active-filters-container {
     position: fixed;
@@ -271,11 +271,12 @@ input[type="checkbox"]:checked {
     padding-top: 0;
     border-bottom: 1px solid #1e2d3d;
     z-index: 1;
-    background-color: #011627;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
   }
   .works-active-filters:last-child {
     border-right: 1px solid #1e2d3d;
-    padding-right: 78.23px;
+    padding-right: 4.889rem;
   }
   .works-active-filters-title {
     display: none;
@@ -284,8 +285,8 @@ input[type="checkbox"]:checked {
     display: block;
     height: 100%;
     fill: #607b96;
-    margin-left: 49.1px;
-    padding-right: 11px;
+    margin-left: 3.069rem;
+    padding-right: 0.688rem;
     border-right: 1px solid #1e2d3d;
     cursor: pointer;
   }
@@ -298,14 +299,15 @@ input[type="checkbox"]:checked {
     display: block;
   }
   .works-filter-item {
-    padding-top: 17.5px;
+    padding-top: 1.094rem;
   }
-
+  .work-card {
+    padding-top: 6.875rem;
+  }
   .card-container {
-    width: 370px;
-    padding-top: 92px;
+    width: 23.125rem;
   }
   .card-media-container {
-    height: 314px;
+    height: 19.625rem;
   }
 }

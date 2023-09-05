@@ -1,16 +1,12 @@
 import "./about.css";
 import { client, urlFor } from "../../client";
 import { useState, useEffect } from "react";
-import {
-  arrowRight,
-  terminal,
-  gamepad,
-  settings,
-  chatIcon,
-} from "../../assets/icons";
+import { arrowRight, terminal, gamepad, settings } from "../../assets/icons";
 import { ReactComponent as CloseButton } from "../../assets/icons/close-button.svg";
+import { ReactComponent as ChatIcon } from "../../assets/icons/chat-icon.svg";
 import { Footer } from "../../components";
 import { motion, AnimatePresence } from "framer-motion";
+import React from "react";
 
 const About = () => {
   const lineNumbers = [
@@ -100,12 +96,9 @@ const About = () => {
   const manageDetails = (detailsState, position) => {
     if (position === "1") {
       setDetailsToggle([!detailsState[0], detailsState[1]]);
-      console.log("1");
     } else if (position === "2") {
       setDetailsToggle([detailsState[0], !detailsState[1]]);
-      console.log("2");
     }
-    console.log(detailsToggle);
   };
 
   return (
@@ -126,7 +119,7 @@ const About = () => {
 
         <div className="about-dropdown-container">
           {about.map((about, index) => (
-            <>
+            <React.Fragment key={index}>
               <div
                 className={
                   titleToggle[index] === true
@@ -152,7 +145,7 @@ const About = () => {
               }
 
               {about.aboutDropdown?.map((dropdown, subtitleIndex) => (
-                <>
+                <React.Fragment key={subtitleIndex}>
                   <AnimatePresence initial={false}>
                     {titleToggle[index] && (
                       //animations, same for all dropdowns
@@ -166,8 +159,8 @@ const About = () => {
                           open: {
                             opacity: 1,
                             height: 13,
-                            paddingBottom: "15px",
-                            fontSize: "16px",
+                            paddingBottom: "0.938rem",
+                            fontSize: "1remx",
                           },
                           collapsed: {
                             opacity: 0,
@@ -213,7 +206,7 @@ const About = () => {
                   </AnimatePresence>
 
                   {dropdown.aboutItem?.map((aboutItem, itemIndex) => (
-                    <AnimatePresence initial={false}>
+                    <AnimatePresence initial={false} key={itemIndex}>
                       {subtitleToggle[dropdown.position] && (
                         <motion.section
                           className="about-item-container"
@@ -225,8 +218,8 @@ const About = () => {
                             open: {
                               opacity: 1,
                               height: 13,
-                              paddingBottom: "15px",
-                              fontSize: "16px",
+                              paddingBottom: "0.938rem",
+                              fontSize: "1rem",
                             },
                             collapsed: {
                               opacity: 0,
@@ -251,22 +244,22 @@ const About = () => {
                       )}
                     </AnimatePresence>
                   ))}
-                </>
+                </React.Fragment>
               ))}
-            </>
+            </React.Fragment>
           ))}
         </div>
         {
           // We use map again so we can place our text beneath the menu items
         }
         {about?.map((about, index) => (
-          <>
+          <React.Fragment key={index}>
             {about.aboutDropdown?.map((dropdown, subtitleIndex) => (
-              <>
+              <React.Fragment key={subtitleIndex}>
                 {dropdown.aboutItem?.map(
                   (aboutItem, itemIndex) =>
                     textToggled.key === aboutItem._key && (
-                      <div className=" about-text-container">
+                      <div className=" about-text-container" key={itemIndex}>
                         <div className="about-text-title">
                           <div className="title-desktop-container">
                             <h1 className="about-title tab-style">
@@ -286,7 +279,9 @@ const About = () => {
                           <div className="about-text-content-wrapper">
                             <div className="lineNumbers-container">
                               {lineNumbers.map((lineNumber, number) => (
-                                <p className="lineNumbers">{lineNumber}</p>
+                                <p className="aboutLineNumbers" key={number}>
+                                  {lineNumber}
+                                </p>
                               ))}
                             </div>
                             <div className="about-text-content">
@@ -294,8 +289,10 @@ const About = () => {
                             </div>
                           </div>
                           <div className="about-images">
-                            <h2 className="about-images-title">{"// Title"}</h2>
                             <div className="about-images-container">
+                              <h2 className="about-images-title">
+                                {aboutItem.title}
+                              </h2>
                               <div className="scroll-wrapper">
                                 {aboutItem.imageOne ? (
                                   <>
@@ -307,7 +304,10 @@ const About = () => {
                                           manageDetails(detailsToggle, "1")
                                         }
                                       >
-                                        <img src={chatIcon} alt="chat" />
+                                        <ChatIcon
+                                          className="chat-icon"
+                                          alt="chat"
+                                        />
                                         <p className="details-chat">details</p>
                                       </div>
                                     </div>
@@ -316,23 +316,19 @@ const About = () => {
                                       src={urlFor(aboutItem.imageOne)}
                                       alt="im1"
                                     />
-                                    <div
-                                      className={
-                                        detailsToggle[0] === true
-                                          ? "details-text-container"
-                                          : "hidden"
-                                      }
-                                    >
-                                      <p className="details-text">
-                                        This is a lorem fucking Ipsum
-                                      </p>
-                                      <CloseButton
-                                        className="close-button"
-                                        onClick={() =>
-                                          manageDetails(detailsToggle, "1")
-                                        }
-                                      />
-                                    </div>
+                                    {detailsToggle[0] && (
+                                      <div className={"details-text-container"}>
+                                        <p className="details-text">
+                                          {aboutItem.descriptionOne}
+                                        </p>
+                                        <CloseButton
+                                          className="close-button"
+                                          onClick={() =>
+                                            manageDetails(detailsToggle, "1")
+                                          }
+                                        />
+                                      </div>
+                                    )}
                                   </>
                                 ) : null}
                                 {aboutItem.imageTwo ? (
@@ -345,7 +341,10 @@ const About = () => {
                                           manageDetails(detailsToggle, "2")
                                         }
                                       >
-                                        <img src={chatIcon} alt="chat" />
+                                        <ChatIcon
+                                          className="chat-icon"
+                                          alt="chat"
+                                        />
                                         <p className="details-chat">details</p>
                                       </div>
                                     </div>
@@ -354,23 +353,19 @@ const About = () => {
                                       src={urlFor(aboutItem.imageTwo)}
                                       alt="im2"
                                     />
-                                    <div
-                                      className={
-                                        detailsToggle[1] === true
-                                          ? "details-text-container"
-                                          : "hidden"
-                                      }
-                                    >
-                                      <p className="details-text">
-                                        This is a lorem fucking Ipsum
-                                      </p>
-                                      <CloseButton
-                                        className="close-button"
-                                        onClick={() =>
-                                          manageDetails(detailsToggle, "2")
-                                        }
-                                      />
-                                    </div>
+                                    {detailsToggle[1] && (
+                                      <div className={"details-text-container"}>
+                                        <p className="details-text">
+                                          {aboutItem.descriptionTwo}
+                                        </p>
+                                        <CloseButton
+                                          className="close-button"
+                                          onClick={() =>
+                                            manageDetails(detailsToggle, "2")
+                                          }
+                                        />
+                                      </div>
+                                    )}
                                   </>
                                 ) : null}
                               </div>
@@ -380,9 +375,9 @@ const About = () => {
                       </div>
                     )
                 )}
-              </>
+              </React.Fragment>
             ))}
-          </>
+          </React.Fragment>
         ))}
       </div>
     </motion.div>

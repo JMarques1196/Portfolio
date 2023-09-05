@@ -9,13 +9,14 @@ const Footer = () => {
     <div id="footer">
       <div className="icons-wrapper">
         <div className="wrapper">
-          <h3 className="title">find me in:</h3>
+          <p className="title">find me in:</p>
         </div>
         <div className="icon-container">
           <a
             href="https://www.instagram.com/jmarques411/"
             target="_blank"
             rel="noreferrer"
+            aria-label="instagram"
           >
             <Insta className="icon" />
           </a>
@@ -25,6 +26,7 @@ const Footer = () => {
             href="https://www.linkedin.com/in/andre-marques11/"
             target="_blank"
             rel="noreferrer"
+            aria-label="linkedin"
           >
             <Linkedin className="icon" />
           </a>
@@ -34,6 +36,7 @@ const Footer = () => {
             href="https://stackoverflow.com/users/15747054/jmarques1196"
             target="_blank"
             rel="noreferrer"
+            aria-label="stackoverflow"
           >
             <Stack className="icon" />
           </a>
@@ -46,6 +49,7 @@ const Footer = () => {
           target="_blank"
           rel="noreferrer"
           className="desktop-link"
+          aria-label="git"
         >
           <p className="title">@JMarques1196</p>
         </a>
@@ -53,6 +57,7 @@ const Footer = () => {
           href="https://github.com/JMarques1196"
           target="_blank"
           rel="noreferrer"
+          aria-label="github"
         >
           <Github className="icon" />
         </a>

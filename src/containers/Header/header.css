@@ -8,44 +8,44 @@
   background-size: cover;
 }
 .home-container {
-  padding-top: 152px;
-  padding-left: 27px;
+  padding-top: 9.5rem;
+  padding-left: 1.688rem;
 }
 .home-greeting {
-  font-size: 18px;
+  font-size: 1.125rem;
   color: #fff;
-  padding-bottom: 10px;
+  padding-bottom: 0.625rem;
 }
 .home-name {
-  font-size: 62px;
+  font-size: 3.875rem;
   color: #fff;
-  padding-bottom: 10px;
+  padding-bottom: 0.625rem;
 }
 .home-profession {
-  font-size: 20px;
+  font-size: 1.25rem;
   color: #43d9ad;
 }
 .home-github {
-  padding-top: 195px;
-  padding-bottom: 16px;
-  font-size: 14px;
+  padding-top: 12.188rem;
+  padding-bottom: 1rem;
+  font-size: 0.875rem;
   color: #607b96;
 }
 .home-github-link {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 19.6px;
   color: #4d5bce;
 }
 .home-github-span-a {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #43d9ad;
 }
 .home-github-span-b {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #fff;
 }
 .home-github-a {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #e99287;
 }
 .home-game {
@@ -65,7 +65,7 @@
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
-    gap: 129px;
+    gap: 8.063rem;
   }
   .home-container {
     padding-top: 0;

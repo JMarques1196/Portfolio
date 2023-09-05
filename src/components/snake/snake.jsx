@@ -30,12 +30,12 @@ const Snake = () => {
     setGameOver(false);
     setStart(false);
     setScore(0);
+    setLastKeyCode(38);
     canvasRef.current.focus();
   };
   const endGame = () => {
     setSpeed(null);
     setGameOver(true);
-    setLastKeyCode(38);
   };
   // So the snake cant back up into itself
   const checkGoBack = (keyCode) => {

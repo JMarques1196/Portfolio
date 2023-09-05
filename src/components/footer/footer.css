@@ -2,7 +2,7 @@
   position: fixed;
   bottom: 0;
   width: 100vw;
-  height: 50px;
+  height: 3.125rem;
   border-top: 1px solid #1e2d3d;
   background-color: #011627;
   z-index: 99;
@@ -10,7 +10,7 @@
   justify-content: space-between;
 }
 .wrapper {
-  width: 150px;
+  width: 9.375rem;
   border-right: 1px solid #1e2d3d;
   height: 100%;
   display: flex;
@@ -19,7 +19,7 @@
 }
 .title {
   color: #607b96;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
 }
 .icons-wrapper {
@@ -28,7 +28,7 @@
   align-items: center;
 }
 .icon-container {
-  width: 52px;
+  width: 3.25rem;
   height: 100%;
   display: flex;
   align-items: center;
@@ -48,7 +48,7 @@
   align-items: center;
   justify-content: center;
   border-left: 1px solid #1e2d3d;
-  width: 180px;
+  width: 11.25rem;
 }
 .icon-github-container:hover {
   .icon {
@@ -61,12 +61,12 @@
   }
 }
 .git-gap {
-  padding-right: 5px;
+  padding-right: 0.313rem;
 }
 
 @media only screen and (max-width: 806px) {
   .icon-github-container {
-    width: 52px;
+    width: 3.25rem;
   }
   .desktop-link {
     display: none;

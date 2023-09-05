@@ -48,7 +48,7 @@ const Contacts = () => {
 
   let currentDate = `${dayName} ${day} ${monthName}`;
 
-  const [contactToggle, setContactToggle] = useState([false, false]);
+  const [contactToggle, setContactToggle] = useState([true, true]);
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -123,7 +123,6 @@ const Contacts = () => {
           <AnimatePresence initial={false}>
             {contactToggle[0] && (
               <motion.div
-                div
                 className="contact-items-container"
                 key="content"
                 initial="collapsed"
@@ -148,8 +147,15 @@ const Contacts = () => {
                   ease: [0, 0.62, 0.23, 0.98],
                 }}
               >
-                <ExternalLink className="contact-icon" />
-                <h2 className="contact-item">placeholder</h2>
+                <div className="find-me-item-container">
+                  <ExternalLink className="contact-icon" />
+                  <a
+                    className="contact-item"
+                    href="mailto: 11a11joaomarques@gmail.com"
+                  >
+                    email
+                  </a>
+                </div>
               </motion.div>
             )}
           </AnimatePresence>
@@ -176,7 +182,6 @@ const Contacts = () => {
           <AnimatePresence initial={false}>
             {contactToggle[1] && (
               <motion.div
-                div
                 className="contact-items-container"
                 key="content"
                 initial="collapsed"
@@ -201,8 +206,44 @@ const Contacts = () => {
                   ease: [0, 0.62, 0.23, 0.98],
                 }}
               >
-                <ExternalLink className="contact-icon" />
-                <h2 className="contact-item">placeholder</h2>
+                <div className="find-me-container">
+                  <div className="find-me-item-container">
+                    <ExternalLink className="contact-icon" />
+                    <a
+                      className="contact-item"
+                      href="https://www.linkedin.com/in/andre-marques11/"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      aria-label="linkedin"
+                    >
+                      linkedin
+                    </a>
+                  </div>
+                  <div className="find-me-item-container">
+                    <ExternalLink className="contact-icon" />
+                    <a
+                      className="contact-item"
+                      href="https://www.instagram.com/jmarques411/"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      aria-label="instagram"
+                    >
+                      instagram
+                    </a>
+                  </div>
+                  <div className="find-me-item-container">
+                    <ExternalLink className="contact-icon" />
+                    <a
+                      className="contact-item"
+                      href="https://github.com/JMarques1196"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      aria-label="github"
+                    >
+                      github
+                    </a>
+                  </div>
+                </div>
               </motion.div>
             )}
           </AnimatePresence>
@@ -219,8 +260,11 @@ const Contacts = () => {
               {!isFormSubmitted ? (
                 <form className="form">
                   <div className="input">
-                    <p className="input-title">_name:</p>
+                    <label htmlFor="name" className="input-title">
+                      _name:
+                    </label>
                     <textarea
+                      id="name"
                       className="input-name"
                       type="text"
                       placeholder=""
@@ -230,8 +274,11 @@ const Contacts = () => {
                     />
                   </div>
                   <div className="input">
-                    <p className="input-title">_email:</p>
+                    <label htmlFor="email" className="input-title">
+                      _email:
+                    </label>
                     <textarea
+                      id="email"
                       className="input-name"
                       type="text"
                       placeholder=""
@@ -241,8 +288,11 @@ const Contacts = () => {
                     />
                   </div>
                   <div className="input">
-                    <p className="input-title">_message:</p>
+                    <label htmlFor="message" className="input-title">
+                      _message:
+                    </label>
                     <textarea
+                      id="message"
                       className="input-message"
                       type="text"
                       placeholder=""
@@ -282,7 +332,9 @@ const Contacts = () => {
             <div className="form-animation">
               <div>
                 {lineNumbers.map((lineNumber, number) => (
-                  <p className="lineNumbers">{lineNumber}</p>
+                  <p className="lineNumbers" key={number}>
+                    {lineNumber}
+                  </p>
                 ))}
               </div>
               <div className="animation-code-container">

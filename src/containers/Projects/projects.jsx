@@ -123,28 +123,27 @@ const Projects = () => {
                     : "ri-arrow-right-s-fill works-subtitle-icon"
                 }
               ></i>
-              <h1 className="works-subtitle">projects</h1>
+              <h2 className="works-subtitle">projects</h2>
             </div>
 
             <div className={toggle && "works-filter"}>
               {
                 // We will map each item into the filter function
                 filterItems.map((item, index) => (
-                  <AnimatePresence initial={false}>
+                  <AnimatePresence initial={false} key={index}>
                     {toggle && (
                       //animations, same for all dropdowns
                       <motion.section
                         className="works-filter-item"
-                        key="content"
                         initial="collapsed"
                         animate="open"
                         exit="collapsed"
                         variants={{
                           open: {
                             opacity: 1,
-                            height: 13,
-                            paddingBottom: "15px",
-                            fontSize: "16px",
+                            height: 15,
+                            paddingBottom: "0.938rem",
+                            fontSize: "1rem",
                           },
                           collapsed: {
                             opacity: 0,
@@ -159,6 +158,7 @@ const Projects = () => {
                         }}
                       >
                         <input
+                          id={item}
                           className="works-checkbox"
                           value={item}
                           type="checkbox"
@@ -170,7 +170,7 @@ const Projects = () => {
                           src={itemsIcons[index]}
                           alt="icon"
                         />
-                        {item}
+                        <label htmlFor={item}>{item}</label>
                       </motion.section>
                     )}
                   </AnimatePresence>
@@ -188,7 +188,9 @@ const Projects = () => {
               <h3 className="works-active-filters-title">{"//"} projects </h3>
               {activeFilters?.map((item) => (
                 // display filters that are currently active
-                <p className="works-active-filters">/ {item}; </p>
+                <p className="works-active-filters" key={item}>
+                  / {item};{" "}
+                </p>
               ))}
               <CloseButton
                 className="projects-title-close"
@@ -205,9 +207,9 @@ const Projects = () => {
             // cards
           }
           <div className="work-card">
-            {filterWork?.map((item, index) => (
+            {filterWork?.map((item, itemNum) => (
               // card
-              <div className="card-container">
+              <div className="card-container" key={itemNum}>
                 <div className="card-title-container">
                   <h2 className="card-title">{item.title}</h2>
                   <p className="card-tag">/ {item.tags}</p>
@@ -251,14 +253,20 @@ const Projects = () => {
                       <div className="card-link-container">
                         <a
                           className="card-link"
-                          href="#"
+                          href={item.projectLink}
                           aria-label={item.title}
+                          target="_blank"
+                          rel="noreferrer"
                         >
                           view-project
                         </a>
                       </div>
                       <div className="card-git">
-                        <a href="#">
+                        <a
+                          href={item.codeLink}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
                           <img src={githubWhite} alt="git" />
                         </a>
                       </div>

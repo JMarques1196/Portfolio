@@ -2,11 +2,11 @@
 
 /* mobile view */
 .about-me {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #fff;
-  padding-top: 77px;
-  padding-left: 27px;
-  padding-bottom: 28px;
+  padding-top: 4.813rem;
+  padding-left: 1.688rem;
+  padding-bottom: 1.75rem;
   position: sticky;
   top: 0;
   background-color: #011627;
@@ -16,29 +16,29 @@
 }
 .about-dropdown-container {
   position: sticky;
-  top: 119px;
+  top: 7.438rem;
   background-color: #011627;
-  padding-bottom: 10px;
+  padding-bottom: 0.625rem;
 }
 .about-title-container {
   display: flex;
-  height: 31px;
+  height: 1.938rem;
   width: 100%;
-  line-height: 31px;
+  line-height: 1.938rem;
   color: #607b96;
   background-color: #1e2d3d;
-  margin-bottom: 3px;
+  margin-bottom: 0.188rem;
   cursor: pointer;
 }
 .about-title-icon {
-  padding-left: 20px;
+  padding-left: 1.25rem;
 }
 .about-title-open {
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 }
 .about-title {
-  padding-left: 12.33px;
-  font-size: 16px;
+  padding-left: 0.771rem;
+  font-size: 1rem;
   font-weight: 400;
 }
 .title-close {
@@ -48,23 +48,23 @@
   display: flex;
 }
 .about-arrow-icon {
-  padding-left: 16px;
+  padding-left: 1rem;
   transition: all 0.3s ease-in-out;
 }
 .about-icon-rotate {
   transform: translate(25%, -30%) rotate(90deg);
   transition: all 0.3s ease-in-out;
-  padding-left: 8px;
-  margin-left: 12px;
+  padding-left: 0.5rem;
+  margin-left: 0.75rem;
 }
 .about-folder-icon {
-  padding-left: 13px;
+  padding-left: 0.813rem;
 }
 .about-subtitle {
-  padding-left: 9px;
-  line-height: 16px;
+  padding-left: 0.563rem;
+  line-height: 1rem;
   color: #607b96;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
   cursor: pointer;
 }
@@ -72,103 +72,119 @@
   color: #fff;
 }
 .about-item-container {
-  padding-bottom: 10px;
-  padding-left: 46px;
+  padding-bottom: 0.625rem;
+  padding-left: 2.875rem;
   display: flex;
 }
 
 .about-text-container {
-  padding-top: 38px;
+  padding-top: 2.375rem;
   display: grid;
   width: 100%;
   background-color: #011627;
 }
 .about-item {
   color: #607b96;
-  padding-left: 9px;
-  font-size: 16px;
+  padding-left: 0.563rem;
+  font-size: 1rem;
   font-weight: 400;
   cursor: pointer;
 }
 .about-text-title {
   display: flex;
-  padding-bottom: 17px;
-  justify-self: start;
+  padding-bottom: 1.063rem;
+  max-width: 31.25rem;
+  width: 100%;
 }
 .lineNumbers-container {
   display: none;
 }
 .about-text-content {
-  padding-left: 11px;
+  padding-left: 0.688rem;
 }
 .about-text {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
   color: #607b96;
   justify-self: center;
 }
 .about-images {
-  padding-top: 38px;
+  padding-top: 2.375rem;
   display: block;
   width: 100%;
 }
 .about-images-title {
-  padding-left: 12.33px;
-  padding-bottom: 29px;
-  font-size: 16px;
+  padding-left: 0.771rem;
+  padding-bottom: 1.813rem;
+  font-size: 1rem;
   font-weight: 400;
   color: #fff;
 }
 .about-images-container {
   display: grid;
-  justify-content: center;
   width: 100%;
 }
 .scroll-wrapper {
-  margin-bottom: 75px;
-  padding-left: 15px;
-  padding-right: 15px;
+  margin-bottom: 4.688rem;
+  padding-left: 0.938rem;
+  padding-right: 0.938rem;
 }
 .details-container {
-  margin-bottom: 12px;
-  max-width: 500px;
+  margin-bottom: 0.75rem;
+  max-width: 31.25rem;
   display: flex;
   justify-content: space-between;
 }
 .about-profile-pic {
-  width: 36px;
-  height: 36px;
+  width: 2.25rem;
+  height: 2.25rem;
   border-radius: 50%;
   background-color: black;
 }
 .about-image {
   width: 100%;
-  max-width: 260px;
+  max-width: 31.25rem;
   height: auto;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   justify-self: center;
-  margin-bottom: 18px;
+  margin-bottom: 1.125rem;
 }
 .details-chat-container {
   display: flex;
+  align-items: center;
+}
+.chat-icon {
+  fill: #607b96;
 }
 .details-chat-container:hover {
   cursor: pointer;
+
+  .details-chat {
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+  }
+  .chat-icon {
+    fill: #fff;
+    transition: all 0.3s ease-in-out;
+  }
 }
 .details-chat {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 400;
   color: #607b96;
-  line-height: 36px;
-  padding-left: 5px;
+  line-height: 2.25rem;
+  padding-left: 0.313rem;
+}
+.hidden-text-container {
+  display: none;
 }
 .details-text-container {
   display: flex;
   justify-content: space-between;
   border-top: 1px solid #607b96;
-  max-width: 260px;
-  padding-top: 17px;
-  padding-bottom: 51px;
+  max-width: 31.25rem;
+  padding-top: 1.063rem;
+  padding-bottom: 3.188rem;
 }
 .details-text {
   width: 100%;
@@ -195,12 +211,11 @@ need more breakpoints for images
   }
 }
 @media only screen and (min-width: 500px) {
+  .about-text-container {
+    justify-items: center;
+  }
   .about-image {
     width: 100%;
-    max-width: 400px;
-  }
-  .details-text-container {
-    max-width: 400px;
   }
 }
 @media only screen and (min-width: 950px) {
@@ -210,7 +225,7 @@ need more breakpoints for images
    */
     background-size: 40;
     background-repeat: no-repeat;
-    background-position: bottom 100px right 70px;
+    background-position: bottom 6.25rem right 4.375rem;
   }
   .about-me {
     display: none;
@@ -221,27 +236,27 @@ need more breakpoints for images
     height: 100%;
   }
   .about-icon-bar {
-    margin-top: 56px;
+    margin-top: 3.5rem;
     display: grid;
     justify-content: center;
-    grid-template-rows: 40px 40px 40px;
-    min-width: 68px;
+    grid-template-rows: 2.5rem 2.5rem 2.5rem;
+    min-width: 4.25rem;
     max-height: 100%;
     border-right: 1px solid #1e2d3d;
   }
   .about-icon {
     width: 24px;
-    padding-top: 17px;
+    padding-top: 1.063rem;
   }
   .about-dropdown-container {
-    margin-top: 56px;
+    margin-top: 3.5rem;
     border-right: 1px solid #1e2d3d;
     position: initial;
   }
   .about-title-container {
     justify-content: flex-start;
     background: none;
-    width: 243px;
+    width: 15.188rem;
     border-bottom: 1px solid #1e2d3d;
     border-top: 1px solid #1e2d3d;
   }
@@ -265,7 +280,7 @@ need more breakpoints for images
   .about-text-container {
     display: block;
     padding-left: 0;
-    padding-top: 56px;
+    padding-top: 3.5rem;
     width: 100%;
     overflow: hidden;
   }
@@ -275,18 +290,21 @@ need more breakpoints for images
   }
   .about-text-title {
     padding: 0;
+    max-width: none;
     border-bottom: 1px solid #1e2d3d;
     align-self: start;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
   }
   .title-desktop-container {
     display: flex;
   }
   .about-title-open {
-    margin-bottom: 21px;
+    margin-bottom: 1.313rem;
   }
   .tab-style {
-    height: 31px;
-    line-height: 31px;
+    height: 1.938rem;
+    line-height: 1.938rem;
     color: #607b96;
   }
   .slash {
@@ -295,8 +313,8 @@ need more breakpoints for images
   .title-close {
     height: 100%;
     display: block;
-    margin-left: 49.1px;
-    padding-right: 11px;
+    margin-left: 3.069rem;
+    padding-right: 0.688rem;
     border-right: 1px solid #1e2d3d;
     fill: #607b96;
   }
@@ -317,10 +335,11 @@ need more breakpoints for images
     box-sizing: border-box;
   }
   .about-text-content-wrapper {
-    padding-top: 80px;
+    padding-top: 1rem;
     margin-bottom: 100px;
     display: flex;
     width: 50%;
+    height: 100%;
     overflow-y: scroll;
     border-right: 1px solid #1e2d3d;
     -ms-overflow-style: none; /* IE and Edge */
@@ -330,18 +349,22 @@ need more breakpoints for images
     display: none;
   }
   .lineNumbers-container {
-    width: 100px;
+    width: 6.25rem;
     display: grid;
     justify-items: center;
-    grid-template-rows: repeat(16, 27px);
+    grid-template-rows: repeat(16, 1.688rem);
   }
-  .lineNumbers {
-    font-size: 18px;
+  .aboutLineNumbers {
+    font-size: 1rem;
     color: #607b96;
+    line-height: 1.313;
+    text-align: end;
+    padding-right: 2.5rem;
+    padding-left: 2.375rem;
   }
   .about-text {
-    padding-right: 50px;
-    font-size: 18px;
+    padding-right: 3.125rem;
+    font-size: 1.125rem;
     line-height: 150%;
   }
 
@@ -358,13 +381,16 @@ need more breakpoints for images
   }
 
   .about-images-title {
-    padding-top: 18px;
-    padding-left: 40px;
-  }
-  .about-images-title {
+    padding-top: 1rem;
+
+    padding-bottom: 3.625rem;
+    padding-left: 0.938rem;
     margin: 0;
   }
-  .about-image {
-    max-width: 400px;
+  .about-images-container {
+    justify-content: center;
+  }
+  image {
+    max-width: 25rem;
   }
 }
