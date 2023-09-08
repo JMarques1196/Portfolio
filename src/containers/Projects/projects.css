@@ -195,6 +195,7 @@ input[type="checkbox"]:checked {
 }
 .card-text {
   padding-top: 1.813rem;
+  font-size: 0.875rem;
   color: #607b96;
   padding-left: 1.938rem;
   padding-right: 1.938rem;
