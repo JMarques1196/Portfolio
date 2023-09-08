@@ -297,19 +297,25 @@ const About = () => {
                                 {aboutItem.imageOne ? (
                                   <>
                                     <div className="details-container">
-                                      <div className="about-profile-pic"></div>
-                                      <div
-                                        className="details-chat-container"
-                                        onClick={() =>
-                                          manageDetails(detailsToggle, "1")
-                                        }
-                                      >
-                                        <ChatIcon
-                                          className="chat-icon"
-                                          alt="chat"
-                                        />
-                                        <p className="details-chat">details</p>
-                                      </div>
+                                      {aboutItem.descriptionOne ? (
+                                        <>
+                                          <div className="about-profile-pic"></div>
+                                          <div
+                                            className="details-chat-container"
+                                            onClick={() =>
+                                              manageDetails(detailsToggle, "1")
+                                            }
+                                          >
+                                            <ChatIcon
+                                              className="chat-icon"
+                                              alt="chat"
+                                            />
+                                            <p className="details-chat">
+                                              details
+                                            </p>
+                                          </div>
+                                        </>
+                                      ) : null}
                                     </div>
                                     <img
                                       className="about-image"
@@ -334,19 +340,25 @@ const About = () => {
                                 {aboutItem.imageTwo ? (
                                   <>
                                     <div className="details-container">
-                                      <div className="about-profile-pic"></div>
-                                      <div
-                                        className="details-chat-container"
-                                        onClick={() =>
-                                          manageDetails(detailsToggle, "2")
-                                        }
-                                      >
-                                        <ChatIcon
-                                          className="chat-icon"
-                                          alt="chat"
-                                        />
-                                        <p className="details-chat">details</p>
-                                      </div>
+                                      {aboutItem.descriptionTwo ? (
+                                        <>
+                                          <div className="about-profile-pic"></div>
+                                          <div
+                                            className="details-chat-container"
+                                            onClick={() =>
+                                              manageDetails(detailsToggle, "2")
+                                            }
+                                          >
+                                            <ChatIcon
+                                              className="chat-icon"
+                                              alt="chat"
+                                            />
+                                            <p className="details-chat">
+                                              details
+                                            </p>
+                                          </div>
+                                        </>
+                                      ) : null}
                                     </div>
                                     <img
                                       className="about-image"

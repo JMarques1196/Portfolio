@@ -136,10 +136,11 @@
   justify-content: space-between;
 }
 .about-profile-pic {
+  background-image: url("../../assets/bg/profilePic.jpg");
+  background-position: center;
   width: 2.25rem;
   height: 2.25rem;
   border-radius: 50%;
-  background-color: black;
 }
 .about-image {
   width: 100%;
@@ -147,7 +148,7 @@
   height: auto;
   border-radius: 0.625rem;
   justify-self: center;
-  margin-bottom: 1.125rem;
+  margin-bottom: 1.875rem;
 }
 .details-chat-container {
   display: flex;
@@ -189,6 +190,7 @@
 .details-text {
   width: 100%;
   color: #607b96;
+  font-size: 0.875rem;
 }
 .close-button {
   fill: #607b96;
