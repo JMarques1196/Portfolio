@@ -93,7 +93,6 @@
 .about-text-title {
   display: flex;
   padding-bottom: 1.063rem;
-  max-width: 31.25rem;
   width: 100%;
 }
 .lineNumbers-container {
@@ -338,18 +337,23 @@ need more breakpoints for images
   }
   .about-text-content-wrapper {
     padding-top: 1rem;
-    margin-bottom: 100px;
     display: flex;
     width: 50%;
-    height: 100%;
-    overflow-y: scroll;
-    border-right: 1px solid #1e2d3d;
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    margin-bottom: 5.188rem;
+    overflow-y: auto;
   }
   .about-text-content-wrapper::-webkit-scrollbar {
-    display: none;
+    display: initial;
+    width: 1rem;
   }
+  .about-text-content-wrapper::-webkit-scrollbar-thumb {
+    background: #607b96;
+  }
+  .about-text-content-wrapper::-webkit-scrollbar-track {
+    background: #011221;
+    border: 1px solid #1e2d3d;
+  }
+
   .lineNumbers-container {
     width: 6.25rem;
     display: grid;
@@ -374,12 +378,20 @@ need more breakpoints for images
     padding-top: 0;
     display: block;
     width: 50%;
-    overflow-y: scroll;
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    overflow-y: auto;
+    border-left: 1px solid #1e2d3d;
+    margin-bottom: 5.188rem;
   }
   .about-images::-webkit-scrollbar {
-    display: none;
+    display: initial;
+    width: 1rem;
+  }
+  .about-images::-webkit-scrollbar-thumb {
+    background: #607b96;
+  }
+  .about-images::-webkit-scrollbar-track {
+    background: #011221;
+    border: 1px solid #1e2d3d;
   }
 
   .about-images-title {
