@@ -189,7 +189,7 @@ const Contacts = () => {
                 variants={{
                   open: {
                     opacity: 1,
-                    height: 13,
+                    height: "auto",
                     paddingBottom: "15px",
                     fontSize: "16px",
                   },
