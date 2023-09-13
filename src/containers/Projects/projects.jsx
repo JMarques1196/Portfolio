@@ -35,16 +35,12 @@ const Projects = () => {
 
     client.fetch(query).then((data) => {
       setWorks(data);
-      setFilterWork(data); // we give data object to both states
+      setFilterWork(data);
     });
   }, []);
 
-  // Filter Function
-  // checkbox
-
   const filterArray = (checkedStatus) => {
     const auxArray = [];
-    //  evaluate filterItems against updatedCheckedState, if one its true, move the tag to another aux array
     for (let i = 0; i < checkedStatus.length; i++) {
       if (checkedStatus[i] === true) {
         auxArray.push(filterItems[i]);
@@ -52,9 +48,7 @@ const Projects = () => {
     }
     return auxArray;
   };
-  // LEFT HERE
-  // SEEMS TO BE WOOOOORKING MF!!!!!!
-  // LEEEEEETS GOOOOOO!!!!!
+
   const filterWorkArray = (arrayUpdate) => {
     const filteredWorkArray = [];
 
@@ -68,20 +62,15 @@ const Projects = () => {
     return filteredWorkArray;
   };
   const handleOnChange = (position, tag) => {
-    // handle the checkbox
-
     if (position !== 0) {
       const updatedCheckedState = checked.map((item, index) =>
         index === 0 ? (checked[0] = false) : index === position ? !item : item
-      ); // replaced bellow snippet with this, but bug still seems to be present
-
-      //  updatedCheckedState[0]=false  This snippet is needed but seems to be causing a bug where all items display randomly
+      );
       setChecked(updatedCheckedState);
       const arrayUpdate = filterArray(updatedCheckedState);
       setFilterWork(filterWorkArray(arrayUpdate));
       setActiveFilters(arrayUpdate);
     } else {
-      // HERE SEEMS TO BE WORKING
       const updatedCheckedState = [!checked[0], false, false, false, false];
       setChecked(updatedCheckedState);
 
@@ -96,7 +85,6 @@ const Projects = () => {
   };
 
   return (
-    //Filter Section
     <motion.div
       id="works"
       initial={{ opacity: 0 }}
@@ -127,67 +115,61 @@ const Projects = () => {
             </div>
 
             <div className={toggle && "works-filter"}>
-              {
-                // We will map each item into the filter function
-                filterItems.map((item, index) => (
-                  <AnimatePresence initial={false} key={index}>
-                    {toggle && (
-                      //animations, same for all dropdowns
-                      <motion.section
-                        className="works-filter-item"
-                        initial="collapsed"
-                        animate="open"
-                        exit="collapsed"
-                        variants={{
-                          open: {
-                            opacity: 1,
-                            height: 15,
-                            paddingBottom: "0.938rem",
-                            fontSize: "1rem",
-                          },
-                          collapsed: {
-                            opacity: 0,
-                            height: 0,
-                            paddingBottom: 0,
-                            fontSize: 0,
-                          },
-                        }}
-                        transition={{
-                          duration: 0.3,
-                          ease: [0, 0.62, 0.23, 0.98],
-                        }}
-                      >
-                        <input
-                          id={item}
-                          className="works-checkbox"
-                          value={item}
-                          type="checkbox"
-                          checked={checked[index]}
-                          onChange={() => handleOnChange(index, item)}
-                        />
-                        <img
-                          className="works-checkbox-icon"
-                          src={itemsIcons[index]}
-                          alt="icon"
-                        />
-                        <label htmlFor={item}>{item}</label>
-                      </motion.section>
-                    )}
-                  </AnimatePresence>
-                ))
-              }
+              {filterItems.map((item, index) => (
+                <AnimatePresence initial={false} key={index}>
+                  {toggle && (
+                    //animations, same for all dropdowns
+                    <motion.section
+                      className="works-filter-item"
+                      initial="collapsed"
+                      animate="open"
+                      exit="collapsed"
+                      variants={{
+                        open: {
+                          opacity: 1,
+                          height: 15,
+                          paddingBottom: "0.938rem",
+                          fontSize: "1rem",
+                        },
+                        collapsed: {
+                          opacity: 0,
+                          height: 0,
+                          paddingBottom: 0,
+                          fontSize: 0,
+                        },
+                      }}
+                      transition={{
+                        duration: 0.3,
+                        ease: [0, 0.62, 0.23, 0.98],
+                      }}
+                    >
+                      <input
+                        id={item}
+                        className="works-checkbox"
+                        value={item}
+                        type="checkbox"
+                        checked={checked[index]}
+                        onChange={() => handleOnChange(index, item)}
+                      />
+                      <img
+                        className="works-checkbox-icon"
+                        src={itemsIcons[index]}
+                        alt="icon"
+                      />
+                      <label htmlFor={item}>{item}</label>
+                    </motion.section>
+                  )}
+                </AnimatePresence>
+              ))}
             </div>
           </div>
         </div>
-        {
-          // active filters display
-        }
+
         <div className="works-selected-container">
           {activeFilters.length !== 0 && (
             <div className="works-active-filters-container">
               <h3 className="works-active-filters-title">{"//"} projects </h3>
               {activeFilters?.map((item) => (
-                // display filters that are currently active
                 <p className="works-active-filters" key={item}>
                   / {item};{" "}
                 </p>
@@ -203,9 +185,6 @@ const Projects = () => {
               />
             </div>
           )}
-          {
-            // cards
-          }
           <div className="work-card">
             {filterWork?.map((item, itemNum) => (
               // card

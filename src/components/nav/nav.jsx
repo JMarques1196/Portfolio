@@ -25,9 +25,6 @@ export default function Navbar() {
     <nav>
       <div className="nav-links">
         <p className="nav-name">andre-marques</p>
-        {
-          // add each NavLink individually here
-        }
         <ul className="nav-desktop-links">{renderItems()}</ul>
       </div>
       <div className="nav-container">
@@ -48,9 +45,6 @@ export default function Navbar() {
       >
         {renderItems()}
       </ul>
-      {
-        //By using filter(Boolean).join(' '), we can ensure that no undefined or empty classes are added to the DOM.
-      }
     </nav>
   );
 }

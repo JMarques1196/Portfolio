@@ -96,9 +96,6 @@ const Contacts = () => {
       <Footer />
       <div className="contacts-container">
         <h1 className="contacts">_contact-me</h1>
-        {
-          // Since we are not using map like in projects and about, we must place the subtitle items bellow our title divs
-        }
         <div className="contact-selection-container">
           <div
             className={

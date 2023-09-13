@@ -100,6 +100,7 @@
 }
 .about-text-content {
   padding-left: 0.688rem;
+  padding-right: 0.688rem;
 }
 .about-text {
   font-size: 1rem;
@@ -341,6 +342,9 @@ need more breakpoints for images
     width: 50%;
     margin-bottom: 5.188rem;
     overflow-y: auto;
+  }
+  .about-text-content {
+    padding-right: 0;
   }
   .about-text-content-wrapper::-webkit-scrollbar {
     display: initial;

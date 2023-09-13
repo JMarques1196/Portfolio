@@ -37,7 +37,7 @@ const Snake = () => {
     setSpeed(null);
     setGameOver(true);
   };
-  // So the snake cant back up into itself
+
   const checkGoBack = (keyCode) => {
     // up
     if (keyCode === lastKeycode) {
@@ -76,7 +76,7 @@ const Snake = () => {
     ) {
       return true;
     }
-    // collision with snake
+
     for (const segment of snk) {
       if (piece[0] === segment[0] && piece[1] === segment[1]) {
         return true;
@@ -108,8 +108,6 @@ const Snake = () => {
   };
 
   useEffect(() => {
-    // fillRect creates a rectangle at x,y with width and heigh
-
     const context = canvasRef.current.getContext("2d");
 
     const gradient = context.createLinearGradient(0, 0, 0, 23);
@@ -121,7 +119,7 @@ const Snake = () => {
     snake.forEach(([x, y]) => context.fillRect(x, y, 1, 1));
     context.fillStyle = "#43D9AD";
     context.fillRect(apple[0], apple[1], 1, 1);
-  }, [snake, apple, gameOver]); // triggers whenever game changing changes happen
+  }, [snake, apple, gameOver]);
 
   useInterval(() => gameLoop(), speed);
 
@@ -134,9 +132,7 @@ const Snake = () => {
         height={`${CANVAS_SIZE[1]}px`}
         tabIndex={1}
       />
-      {
-        // game over === false, does nothing
-      }
+
       <div className={gameOver === true ? "game-menu filter" : "game-menu"}>
         {gameOver && <div className="game-over">Game Over!</div>}
         <button

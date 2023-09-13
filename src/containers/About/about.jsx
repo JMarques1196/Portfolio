@@ -27,9 +27,8 @@ const About = () => {
     "15",
     "16",
   ];
-  // State to fetch data from Sanity
+
   const [about, setAbout] = useState([]);
-  // State to manage each individual menu toggle
   const [titleToggle, setTitleToggle] = useState([]);
   const [subtitleToggle, setSubtitleToggle] = useState([true, false, false]);
   const [textToggled, setTextToggled] = useState({
@@ -37,14 +36,13 @@ const About = () => {
     key: "",
   });
   const [detailsToggle, setDetailsToggle] = useState([false, false]);
-  // useEffect to grab data from sanity
+
   useEffect(() => {
     const query = '*[_type == "about"]';
     client.fetch(query).then((data) => {
       setAbout(data);
     });
 
-    // setting up a aux array for controling the section title states
     const arr = new Array(about.length);
     arr[0] = true;
     setTitleToggle(arr.fill(false, 1, arr.length));
@@ -54,8 +52,6 @@ const About = () => {
     });
   }, [about.length]);
 
-  ///////////
-  // Custom Hooks to toggle the menus individually
   const titleHandleToggle = (position) => {
     const updatedToggledState = titleToggle.map((item, index) =>
       index === position ? !item : item
@@ -84,7 +80,7 @@ const About = () => {
       });
     }
   };
-  // Custom function to toggle dropdown state when clicking the title
+
   const manageDropdown = (dropdown) => {
     const aux = subtitleToggle;
     for (let i = 0; i < dropdown.length; i++) {
@@ -140,15 +136,11 @@ const About = () => {
                 ></i>
                 <h2 className="about-title">{about.title}</h2>
               </div>
-              {
-                // Section Title
-              }
 
               {about.aboutDropdown?.map((dropdown, subtitleIndex) => (
                 <React.Fragment key={subtitleIndex}>
                   <AnimatePresence initial={false}>
                     {titleToggle[index] && (
-                      //animations, same for all dropdowns
                       <motion.section
                         className="about-subtitle-container"
                         key="content"
@@ -175,9 +167,6 @@ const About = () => {
                         }}
                         onClick={() => handleSubtitleToggle(dropdown.position)}
                       >
-                        {
-                          //end of animation
-                        }
                         <img
                           className={
                             subtitleToggle[dropdown.position] === true
@@ -249,9 +238,6 @@ const About = () => {
             </React.Fragment>
           ))}
         </div>
-        {
-          // We use map again so we can place our text beneath the menu items
-        }
         {about?.map((about, index) => (
           <React.Fragment key={index}>
             {about.aboutDropdown?.map((dropdown, subtitleIndex) => (
