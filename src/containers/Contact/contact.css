@@ -5,7 +5,7 @@
   color: #fea55f;
 }
 .gray {
-  color: #607b96;
+  color: #8fa2b7;
 }
 .selected {
   color: #fff;
@@ -31,7 +31,7 @@
   height: 1.875rem;
   width: 100%;
   line-height: 1.938rem;
-  color: #607b96;
+  color: #8fa2b7;
   background-color: #1e2d3d;
   margin-bottom: 0.188rem;
   cursor: pointer;
@@ -71,12 +71,12 @@
 }
 .contact-icon {
   padding-left: 1.75rem;
-  fill: #607b96;
+  fill: #8fa2b7;
 }
 .contact-item {
   padding-left: 0.563rem;
   line-height: 1rem;
-  color: #607b96;
+  color: #8fa2b7;
   font-size: 1rem;
   font-weight: 400;
   cursor: pointer;
@@ -104,7 +104,7 @@
 }
 .input-title {
   display: block;
-  color: #607b96;
+  color: #8fa2b7;
   padding-bottom: 0.625rem;
   font-size: 1rem;
   font-weight: 400;
@@ -112,7 +112,7 @@
   width: 100%;
 }
 textarea {
-  color: #607b96;
+  color: #8fa2b7;
   font-size: 1rem;
   box-sizing: border-box;
   resize: none;
@@ -163,7 +163,7 @@ textarea {
 }
 .new-message-text {
   font-size: 1.125rem;
-  color: #607b96;
+  color: #8fa2b7;
   text-align: center;
   margin-left: 1.688rem;
   margin-right: 1.688rem;
@@ -245,12 +245,12 @@ textarea {
     line-height: 1.938rem;
     font-weight: 400;
     padding-left: 0.75rem;
-    color: #607b96;
+    color: #8fa2b7;
     text-align: center;
   }
   .contacts-title-close {
     display: grid;
-    fill: #607b96;
+    fill: #8fa2b7;
     align-items: center;
     margin-left: 3.069rem;
     padding-right: 0.688rem;
@@ -309,7 +309,7 @@ textarea {
   }
   .lineNumbers {
     font-size: 1rem;
-    color: #607b96;
+    color: #8fa2b7;
     line-height: 1.313rem;
     text-align: end;
     padding-right: 2.5rem;
@@ -323,7 +323,7 @@ textarea {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.313rem;
-    color: #5565e8;
+    color: #4d5bce;
     width: 100%;
     word-break: break-all;
   }

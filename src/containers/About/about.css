@@ -25,7 +25,7 @@
   height: 1.938rem;
   width: 100%;
   line-height: 1.938rem;
-  color: #607b96;
+  color: #8fa2b7;
   background-color: #1e2d3d;
   margin-bottom: 0.188rem;
   cursor: pointer;
@@ -63,7 +63,7 @@
 .about-subtitle {
   padding-left: 0.563rem;
   line-height: 1rem;
-  color: #607b96;
+  color: #8fa2b7;
   font-size: 1rem;
   font-weight: 400;
   cursor: pointer;
@@ -84,7 +84,7 @@
   background-color: #011627;
 }
 .about-item {
-  color: #607b96;
+  color: #8fa2b7;
   padding-left: 0.563rem;
   font-size: 1rem;
   font-weight: 400;
@@ -105,7 +105,7 @@
 .about-text {
   font-size: 1rem;
   font-weight: 400;
-  color: #607b96;
+  color: #8fa2b7;
   justify-self: center;
 }
 .about-images {
@@ -155,7 +155,7 @@
   align-items: center;
 }
 .chat-icon {
-  fill: #607b96;
+  fill: #8fa2b7;
 }
 .details-chat-container:hover {
   cursor: pointer;
@@ -172,7 +172,7 @@
 .details-chat {
   font-size: 0.875rem;
   font-weight: 400;
-  color: #607b96;
+  color: #8fa2b7;
   line-height: 2.25rem;
   padding-left: 0.313rem;
 }
@@ -182,18 +182,18 @@
 .details-text-container {
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid #607b96;
+  border-top: 1px solid #8fa2b7;
   max-width: 31.25rem;
   padding-top: 1.063rem;
   padding-bottom: 3.188rem;
 }
 .details-text {
   width: 100%;
-  color: #607b96;
+  color: #8fa2b7;
   font-size: 0.875rem;
 }
 .close-button {
-  fill: #607b96;
+  fill: #8fa2b7;
 }
 .close-button:hover {
   cursor: pointer;
@@ -307,7 +307,7 @@ need more breakpoints for images
   .tab-style {
     height: 1.938rem;
     line-height: 1.938rem;
-    color: #607b96;
+    color: #8fa2b7;
   }
   .slash {
     display: none;
@@ -318,7 +318,7 @@ need more breakpoints for images
     margin-left: 3.069rem;
     padding-right: 0.688rem;
     border-right: 1px solid #1e2d3d;
-    fill: #607b96;
+    fill: #8fa2b7;
   }
   .title-close:hover {
     fill: #fff;
@@ -351,7 +351,7 @@ need more breakpoints for images
     width: 1rem;
   }
   .about-text-content-wrapper::-webkit-scrollbar-thumb {
-    background: #607b96;
+    background: #8fa2b7;
   }
   .about-text-content-wrapper::-webkit-scrollbar-track {
     background: #011221;
@@ -366,7 +366,7 @@ need more breakpoints for images
   }
   .aboutLineNumbers {
     font-size: 1rem;
-    color: #607b96;
+    color: #8fa2b7;
     line-height: 1.313;
     text-align: end;
     padding-right: 2.5rem;
@@ -391,7 +391,7 @@ need more breakpoints for images
     width: 1rem;
   }
   .about-images::-webkit-scrollbar-thumb {
-    background: #607b96;
+    background: #8fa2b7;
   }
   .about-images::-webkit-scrollbar-track {
     background: #011221;

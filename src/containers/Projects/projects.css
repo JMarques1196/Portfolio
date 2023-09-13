@@ -29,7 +29,7 @@
   height: 1.938rem;
   width: 100%;
   line-height: 1.938rem;
-  color: #607b96;
+  color: #8fa2b7;
   background-color: #1e2d3d;
   margin-bottom: 0.188rem;
   cursor: pointer;
@@ -67,7 +67,7 @@
 .works-filter-item {
   display: flex;
   align-items: center;
-  color: #607b96;
+  color: #8fa2b7;
   font-weight: 400;
 }
 
@@ -79,7 +79,7 @@
 }
 input[type="checkbox"] {
   appearance: none;
-  border: 1px solid #607b96;
+  border: 1px solid #8fa2b7;
   border-radius: 2px;
   width: 1.188rem;
   height: 1.188rem;
@@ -88,7 +88,7 @@ input[type="checkbox"] {
 
 input[type="checkbox"]:checked {
   content: "";
-  background-color: #607b96;
+  background-color: #8fa2b7;
   background-image: url(../../assets/icons/check-line.svg);
   background-repeat: no-repeat;
   background-position: center;
@@ -124,7 +124,7 @@ input[type="checkbox"]:checked {
   line-height: 1.938rem;
   font-weight: 400;
   padding-left: 0.75rem;
-  color: #607b96;
+  color: #8fa2b7;
   text-align: center;
 }
 .projects-title-close {
@@ -157,7 +157,7 @@ input[type="checkbox"]:checked {
   font-size: 1rem;
   font-weight: 400;
   padding-left: 0.75rem;
-  color: #607b96;
+  color: #8fa2b7;
 }
 .card-media-container {
   background-color: #011221;
@@ -194,7 +194,7 @@ input[type="checkbox"]:checked {
 .card-text {
   padding-top: 1.813rem;
   font-size: 0.875rem;
-  color: #607b96;
+  color: #8fa2b7;
   padding-left: 1.938rem;
   padding-right: 1.938rem;
 }
@@ -275,7 +275,7 @@ input[type="checkbox"]:checked {
     width: 1rem;
   }
   .works-selected-container::-webkit-scrollbar-thumb {
-    background: #607b96;
+    background: #8fa2b7;
   }
   .works-selected-container::-webkit-scrollbar-track {
     background: #011221;
@@ -299,7 +299,7 @@ input[type="checkbox"]:checked {
   .projects-title-close {
     display: block;
     height: 100%;
-    fill: #607b96;
+    fill: #8fa2b7;
     margin-left: 3.069rem;
     padding-right: 0.688rem;
     border-right: 1px solid #1e2d3d;
