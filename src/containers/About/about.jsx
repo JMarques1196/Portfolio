@@ -221,7 +221,10 @@ const About = () => {
                             duration: 0.8,
                             ease: [0, 0.62, 0.23, 0.98],
                           }}
-                          onClick={() => handleTextToggle(aboutItem._key)}
+                          onClick={() => {
+                            handleTextToggle(aboutItem._key);
+                            setDetailsToggle([false, false]);
+                          }}
                         >
                           <img
                             className="about-item-icon"
