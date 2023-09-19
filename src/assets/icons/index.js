@@ -21,3 +21,7 @@ export { default as settings } from "./settings.svg";
 export { default as stack } from "./stack.svg";
 export { default as terminal } from "./terminal.svg";
 export { default as githubWhite } from "./github-white.svg";
+export { default as tailwind } from "./tailwind.svg";
+export { default as tailwindBlack } from "./tailwind-black.svg";
+export { default as stripe } from "./stripe.svg";
+export { default as stripeWhite } from "./stripeWhite.svg";

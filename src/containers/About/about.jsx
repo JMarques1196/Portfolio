@@ -26,6 +26,7 @@ const About = () => {
     "14",
     "15",
     "16",
+    "17",
   ];
 
   const [about, setAbout] = useState([]);

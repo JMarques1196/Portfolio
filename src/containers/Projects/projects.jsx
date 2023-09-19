@@ -6,20 +6,26 @@ import {
   javascript,
   javascriptBlack,
   react,
-  css,
   asterisk,
-  cms,
   reactBlack,
-  cssBlack,
-  cmsBlack,
   githubWhite,
+  tailwind,
+  tailwindBlack,
+  stripe,
+  stripeWhite,
 } from "../../assets/icons";
 import { ReactComponent as CloseButton } from "../../assets/icons/close-button.svg";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Projects = () => {
-  const filterItems = ["All", "Javascript", "React JS", "CMS", "CSS"];
-  const itemsIcons = [asterisk, javascript, react, cms, css];
+  const filterItems = [
+    "All",
+    "Javascript",
+    "React JS",
+    "Tailwind",
+    "Payment Integration",
+  ];
+  const itemsIcons = [asterisk, javascript, react, tailwind, stripe];
 
   const [works, setWorks] = useState([]);
   const [filterWork, setFilterWork] = useState([]);
@@ -50,11 +56,14 @@ const Projects = () => {
   };
 
   const filterWorkArray = (arrayUpdate) => {
-    const filteredWorkArray = [];
+    let filteredWorkArray = [];
 
     for (let i = 0; i < arrayUpdate.length; i++) {
       for (let x = 0; x < works.length; x++) {
-        if (works[x].tags.toString() === arrayUpdate[i]) {
+        if (
+          works[x].tags.toString().includes(arrayUpdate[i]) &&
+          filteredWorkArray.includes(works[x]) === false
+        ) {
           filteredWorkArray.push(works[x]);
         }
       }
@@ -191,7 +200,7 @@ const Projects = () => {
               <div className="card-container" key={itemNum}>
                 <div className="card-title-container">
                   <h2 className="card-title">{item.title}</h2>
-                  <p className="card-tag">/ {item.tags}</p>
+                  <p className="card-tag">/ {item.tags[0]} ;</p>
                 </div>
                 <div className="card-media-container">
                   <div className="card-img-container">
@@ -200,29 +209,29 @@ const Projects = () => {
                       src={urlFor(item.imgUrl)}
                       alt="card media"
                     />
-                    {item.tags.toString() === "React JS" ? (
+                    {item.tags[0] === "React JS" ? (
                       <img
                         className="card-icon light-blue"
                         src={reactBlack}
                         alt="react"
                       />
-                    ) : item.tags.toString() === "Javascript" ? (
+                    ) : item.tags[0] === "Javascript" ? (
                       <img
                         className="card-icon yellow"
                         src={javascriptBlack}
                         alt="javascript"
                       />
-                    ) : item.tags.toString() === "CSS" ? (
+                    ) : item.tags[0] === "Tailwind" ? (
                       <img
                         className="card-icon dark-blue"
-                        src={cssBlack}
+                        src={tailwindBlack}
                         alt="css"
                       />
-                    ) : item.tags.toString() === "CMS" ? (
+                    ) : item.tags[0] === "Payment Integration" ? (
                       <img
-                        className="card-icon green"
-                        src={cmsBlack}
-                        alt="cms"
+                        className="card-icon purple"
+                        src={stripeWhite}
+                        alt="stripe"
                       />
                     ) : null}
                   </div>

@@ -123,6 +123,7 @@
 .about-images-container {
   display: grid;
   width: 100%;
+  margin-bottom: 3.125rem;
 }
 .scroll-wrapper {
   padding-left: 0.938rem;
@@ -406,6 +407,7 @@ need more breakpoints for images
   }
   .about-images-container {
     justify-content: center;
+    margin-bottom: 0;
   }
   image {
     max-width: 25rem;
