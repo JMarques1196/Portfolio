@@ -26,7 +26,7 @@ const Contacts = () => {
   ];
 
   const date = new Date();
-  const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
+  const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Saturday"];
   const month = [
     "January",
     "February",
@@ -46,7 +46,7 @@ const Contacts = () => {
   let dayName = dayNames[date.getDay()];
   let day = date.getDate();
 
-  let currentDate = `${dayName} ${day} ${monthName}`;
+  let currentDate = `"${dayName}" ${day} ${monthName}`;
 
   const [contactToggle, setContactToggle] = useState([true, true]);
   const [formData, setFormData] = useState({
