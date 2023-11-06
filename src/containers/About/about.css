@@ -137,25 +137,6 @@ a{
   display: flex;
   justify-content: space-between;
 }
-.description-link-container{
-  display: flex;
-  gap: 0.625rem;
-  align-items: center;
-}
-.description-link{
-  font-size: 0.875rem;
-}
-.description-link:hover{
-    color: #fff;
-    transition: all 0.3s ease-in-out;
-}
-.about-profile-pic {
-  background-image: url("../../assets/bg/profilePic.jpg");
-  background-position: center;
-  width: 2.25rem;
-  height: 2.25rem;
-  border-radius: 50%;
-}
 .about-image {
   width: 100%;
   max-width: 31.25rem;
