@@ -289,17 +289,6 @@ const About = () => {
                                     <div className="details-container">
                                       {aboutItem.descriptionOne ? (
                                         <>
-                                          <div className="description-link-container">
-                                            <div className="about-profile-pic"></div>
-                                            <a
-                                              className="description-link"
-                                              href={aboutItem.link}
-                                              target="_blank"
-                                              rel="noreferrer"
-                                            >
-                                              @JMarques1196
-                                            </a>
-                                          </div>
                                           <div
                                             className="details-chat-container"
                                             onClick={() =>
@@ -342,17 +331,6 @@ const About = () => {
                                     <div className="details-container">
                                       {aboutItem.descriptionTwo ? (
                                         <>
-                                          <div className="description-link-container">
-                                            <div className="about-profile-pic"></div>
-                                            <a
-                                              className="description-link"
-                                              href={aboutItem.link}
-                                              target="_blank"
-                                              rel="noreferrer"
-                                            >
-                                              @JMarques1196
-                                            </a>
-                                          </div>
                                           <div
                                             className="details-chat-container"
                                             onClick={() =>
