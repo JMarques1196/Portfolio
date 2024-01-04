@@ -1,6 +1,6 @@
-# Welcome to My Portofolio
+# My Portofolio
 ## About:
-I've built this portfolio using React and Sanity so its easy to update information. 
+I've built this portfolio using React and Sanity so its easier to keep the information on it updated. 
 
 ## Features:
 
