@@ -134,7 +134,7 @@ const Snake = () => {
       />
 
       <div className={gameOver === true ? "game-menu filter" : "game-menu"}>
-        {gameOver && <div className="game-over">Game Over!</div>}
+        {gameOver && <div className="game-over filter">Game Over!</div>}
         <button
           className={start === true ? "start-game" : "start-game hidden"}
           onClick={startGame}
