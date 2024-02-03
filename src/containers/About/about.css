@@ -135,7 +135,7 @@ a{
   margin-bottom: 0.75rem;
   max-width: 31.25rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 .about-image {
   width: 100%;
