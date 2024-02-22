@@ -103,8 +103,6 @@ input[type="checkbox"]:checked {
 }
 .works-selected-container {
   overflow: scroll;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
 }
 .works-active-filters-container {
   display: flex;
