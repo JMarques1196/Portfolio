@@ -163,7 +163,7 @@ const About = () => {
                           },
                         }}
                         transition={{
-                          duration: 0.8,
+                          duration: 0.4,
                           ease: [0, 0.62, 0.23, 0.98],
                         }}
                         onClick={() => handleSubtitleToggle(dropdown.position)}
@@ -219,7 +219,7 @@ const About = () => {
                             },
                           }}
                           transition={{
-                            duration: 0.8,
+                            duration: 0.4,
                             ease: [0, 0.62, 0.23, 0.98],
                           }}
                           onClick={() => {

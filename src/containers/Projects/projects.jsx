@@ -148,7 +148,7 @@ const Projects = () => {
                         },
                       }}
                       transition={{
-                        duration: 0.3,
+                        duration: 0.4,
                         ease: [0, 0.62, 0.23, 0.98],
                       }}
                     >
