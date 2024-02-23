@@ -16,6 +16,7 @@ import {
 } from "../../assets/icons";
 import { ReactComponent as CloseButton } from "../../assets/icons/close-button.svg";
 import { motion, AnimatePresence } from "framer-motion";
+import LoadingSpinner from "../../components/spinner/spinner";
 
 const Projects = () => {
   const filterItems = [
@@ -54,7 +55,6 @@ const Projects = () => {
     }
     return auxArray;
   };
-
   const filterWorkArray = (arrayUpdate) => {
     let filteredWorkArray = [];
 
@@ -194,76 +194,79 @@ const Projects = () => {
               />
             </div>
           )}
-          <div className="work-card">
-            {filterWork?.map((item, itemNum) => (
-              // card
-              <div className="card-container" key={itemNum}>
-                <div className="card-title-container">
-                  <h2 className="card-title">{item.title}</h2>
-                  <p className="card-tag">/ {item.tags[0]} ;</p>
-                </div>
-                <div className="card-media-container">
-                  <div className="card-img-container">
-                    <img
-                      className="card-img"
-                      src={urlFor(item.imgUrl)}
-                      alt="card media"
-                    />
-                    {item.tags[0] === "React JS" ? (
-                      <img
-                        className="card-icon light-blue"
-                        src={reactBlack}
-                        alt="react"
-                      />
-                    ) : item.tags[0] === "Javascript" ? (
-                      <img
-                        className="card-icon yellow"
-                        src={javascriptBlack}
-                        alt="javascript"
-                      />
-                    ) : item.tags[0] === "Tailwind" ? (
-                      <img
-                        className="card-icon dark-blue"
-                        src={tailwindBlack}
-                        alt="css"
-                      />
-                    ) : item.tags[0] === "Payment Integration" ? (
-                      <img
-                        className="card-icon purple"
-                        src={stripeWhite}
-                        alt="stripe"
-                      />
-                    ) : null}
+          {works.length === 0 && <LoadingSpinner />}
+          {works.length !== 0 && (
+            <div className="work-card">
+              {filterWork?.map((item, itemNum) => (
+                // card
+                <div className="card-container" key={itemNum}>
+                  <div className="card-title-container">
+                    <h2 className="card-title">{item.title}</h2>
+                    <p className="card-tag">/ {item.tags[0]} ;</p>
                   </div>
-                  <div className="card-description">
-                    <p className="card-text">{item.description}</p>
-                    <div className="links-wrapper">
-                      <div className="card-link-container">
-                        <a
-                          className="card-link"
-                          href={item.projectLink}
-                          aria-label={item.title}
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          view-project
-                        </a>
-                      </div>
-                      <div className="card-git">
-                        <a
-                          href={item.codeLink}
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <img src={githubWhite} alt="git" />
-                        </a>
+                  <div className="card-media-container">
+                    <div className="card-img-container">
+                      <img
+                        className="card-img"
+                        src={urlFor(item.imgUrl)}
+                        alt="card media"
+                      />
+                      {item.tags[0] === "React JS" ? (
+                        <img
+                          className="card-icon light-blue"
+                          src={reactBlack}
+                          alt="react"
+                        />
+                      ) : item.tags[0] === "Javascript" ? (
+                        <img
+                          className="card-icon yellow"
+                          src={javascriptBlack}
+                          alt="javascript"
+                        />
+                      ) : item.tags[0] === "Tailwind" ? (
+                        <img
+                          className="card-icon dark-blue"
+                          src={tailwindBlack}
+                          alt="css"
+                        />
+                      ) : item.tags[0] === "Payment Integration" ? (
+                        <img
+                          className="card-icon purple"
+                          src={stripeWhite}
+                          alt="stripe"
+                        />
+                      ) : null}
+                    </div>
+                    <div className="card-description">
+                      <p className="card-text">{item.description}</p>
+                      <div className="links-wrapper">
+                        <div className="card-link-container">
+                          <a
+                            className="card-link"
+                            href={item.projectLink}
+                            aria-label={item.title}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            view-project
+                          </a>
+                        </div>
+                        <div className="card-git">
+                          <a
+                            href={item.codeLink}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <img src={githubWhite} alt="git" />
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </motion.div>

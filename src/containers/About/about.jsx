@@ -7,6 +7,7 @@ import { ReactComponent as ChatIcon } from "../../assets/icons/chat-icon.svg";
 import { Footer } from "../../components";
 import { motion, AnimatePresence } from "framer-motion";
 import React from "react";
+import LoadingSpinner from "../../components/spinner/spinner";
 
 const About = () => {
   const lineNumbers = [
@@ -105,7 +106,6 @@ const About = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <Footer />
       <h1 className="about-me">_about-me</h1>
       <div className="about-container">
         <div className="about-icon-bar">
@@ -113,7 +113,7 @@ const About = () => {
           <img className="about-icon" src={gamepad} alt="gamepad" />
           <img className="about-icon" src={settings} alt="settings" />
         </div>
-
+        {about.length === 0 && <LoadingSpinner />}
         <div className="about-dropdown-container">
           {about.map((about, index) => (
             <React.Fragment key={index}>
@@ -380,6 +380,7 @@ const About = () => {
           </React.Fragment>
         ))}
       </div>
+      <Footer />
     </motion.div>
   );
 };
