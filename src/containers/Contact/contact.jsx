@@ -2,8 +2,8 @@ import "./contact.css";
 import { useState } from "react";
 import { client } from "../../client";
 import { Footer } from "../../components";
-import { ReactComponent as CloseButton } from "../../assets/icons/close-button.svg";
-import { ReactComponent as ExternalLink } from "../../assets/icons/external-link.svg";
+import CloseButton from "../../assets/icons/close-button.svg?react";
+import ExternalLink from "../../assets/icons/external-link.svg?react";
 import { motion, AnimatePresence } from "framer-motion";
 const Contacts = () => {
   const lineNumbers = [

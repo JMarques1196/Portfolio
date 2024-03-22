@@ -1,8 +1,8 @@
 import "./footer.css";
-import { ReactComponent as Insta } from "../../assets/icons/insta.svg";
-import { ReactComponent as Linkedin } from "../../assets/icons/linkedin.svg";
-import { ReactComponent as Stack } from "../../assets/icons/stack.svg";
-import { ReactComponent as Github } from "../../assets/icons/github.svg";
+import Insta from "../../assets/icons/insta.svg?react";
+import Linkedin from "../../assets/icons/linkedin.svg?react";
+import Stack from "../../assets/icons/stack.svg?react";
+import Github from "../../assets/icons/github.svg?react";
 
 const Footer = () => {
   return (

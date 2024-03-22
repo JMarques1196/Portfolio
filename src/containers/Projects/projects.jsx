@@ -14,7 +14,7 @@ import {
   stripe,
   stripeWhite,
 } from "../../assets/icons";
-import { ReactComponent as CloseButton } from "../../assets/icons/close-button.svg";
+import CloseButton from "../../assets/icons/close-button.svg?react";
 import { motion, AnimatePresence } from "framer-motion";
 import LoadingSpinner from "../../components/spinner/spinner";
 
