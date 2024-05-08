@@ -1,6 +1,7 @@
 #home {
   min-height: 100vh;
   position: relative;
+  z-index: 2;
 }
 /* Mobile */
 #home {
@@ -66,6 +67,7 @@
     flex-wrap: wrap;
     align-items: center;
     gap: 8.063rem;
+    z-index: 0;
   }
   .home-container {
     padding-top: 0;

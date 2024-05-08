@@ -5,7 +5,7 @@
   height: 3.125rem;
   border-top: 1px solid #1e2d3d;
   background-color: #011627;
-  z-index: 99;
+  z-index: 1;
   display: flex;
   justify-content: space-between;
 }

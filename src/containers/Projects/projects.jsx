@@ -100,7 +100,6 @@ const Projects = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <Footer />
       <div className="works-container">
         <div className="works-selection-container">
           <h1 className="works-title">_portfolio</h1>

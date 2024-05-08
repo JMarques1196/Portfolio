@@ -93,7 +93,6 @@ const Contacts = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <Footer />
       <div className="contacts-container">
         <h1 className="contacts">_contact-me</h1>
         <div className="contact-selection-container">

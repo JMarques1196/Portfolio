@@ -1,4 +1,4 @@
-import { Nav } from "./components";
+import { Nav, Footer } from "./components";
 import { Header, About, Contacts, Projects } from "./containers";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
@@ -13,6 +13,7 @@ function App() {
           <Route exact path={"/projects"} element={<Projects />} />
           <Route exact path={"/contacts"} element={<Contacts />} />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );

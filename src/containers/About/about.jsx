@@ -380,7 +380,6 @@ const About = () => {
           </React.Fragment>
         ))}
       </div>
-      <Footer />
     </motion.div>
   );
 };
