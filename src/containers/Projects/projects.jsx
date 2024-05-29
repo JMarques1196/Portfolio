@@ -19,13 +19,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import LoadingSpinner from "../../components/spinner/spinner";
 
 const Projects = () => {
-  const filterItems = [
-    "All",
-    "Javascript",
-    "React JS",
-    "Tailwind",
-    "Payment Integration",
-  ];
+  const filterItems = ["All", "Javascript", "React JS", "Freelance", "MERN"];
   const itemsIcons = [asterisk, javascript, react, tailwind, stripe];
 
   const [works, setWorks] = useState([]);
@@ -201,7 +195,7 @@ const Projects = () => {
                 <div className="card-container" key={itemNum}>
                   <div className="card-title-container">
                     <h2 className="card-title">{item.title}</h2>
-                    <p className="card-tag">/ {item.tags[0]} ;</p>
+                    <p className="card-tag">/ {item.tags}:</p>
                   </div>
                   <div className="card-media-container">
                     <div className="card-img-container">
