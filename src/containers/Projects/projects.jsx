@@ -11,8 +11,8 @@ import {
   githubWhite,
   tailwind,
   tailwindBlack,
-  stripe,
-  stripeWhite,
+  mern,
+  mernBlack,
 } from "../../assets/icons";
 import CloseButton from "../../assets/icons/close-button.svg?react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -20,7 +20,7 @@ import LoadingSpinner from "../../components/spinner/spinner";
 
 const Projects = () => {
   const filterItems = ["All", "Javascript", "React JS", "Freelance", "MERN"];
-  const itemsIcons = [asterisk, javascript, react, tailwind, stripe];
+  const itemsIcons = [asterisk, javascript, react, tailwind, mern];
 
   const [works, setWorks] = useState([]);
   const [filterWork, setFilterWork] = useState([]);
@@ -195,7 +195,7 @@ const Projects = () => {
                 <div className="card-container" key={itemNum}>
                   <div className="card-title-container">
                     <h2 className="card-title">{item.title}</h2>
-                    <p className="card-tag">/ {item.tags}:</p>
+                    <p className="card-tag">/ {item.tags}</p>
                   </div>
                   <div className="card-media-container">
                     <div className="card-img-container">
@@ -216,16 +216,16 @@ const Projects = () => {
                           src={javascriptBlack}
                           alt="javascript"
                         />
-                      ) : item.tags[0] === "Tailwind" ? (
+                      ) : item.tags[0] === "Freelance / " ? (
                         <img
                           className="card-icon dark-blue"
                           src={tailwindBlack}
                           alt="css"
                         />
-                      ) : item.tags[0] === "Payment Integration" ? (
+                      ) : item.tags[0] === "MERN" ? (
                         <img
-                          className="card-icon purple"
-                          src={stripeWhite}
+                          className="card-icon white"
+                          src={mernBlack}
                           alt="stripe"
                         />
                       ) : null}

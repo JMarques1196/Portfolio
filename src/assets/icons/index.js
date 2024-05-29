@@ -25,3 +25,5 @@ export { default as tailwind } from "./tailwind.svg";
 export { default as tailwindBlack } from "./tailwind-black.svg";
 export { default as stripe } from "./stripe.svg";
 export { default as stripeWhite } from "./stripeWhite.svg";
+export { default as mern } from "./mern.svg";
+export { default as mernBlack } from "./mernBlack.svg";
