@@ -287,6 +287,9 @@ const About = () => {
                                 {aboutItem.imageOne ? (
                                   <>
                                     <div className="details-container">
+                                      <h1 className="about-image-title">
+                                        {aboutItem.imageOneTitle}
+                                      </h1>
                                       {aboutItem.descriptionOne ? (
                                         <>
                                           <div
@@ -329,6 +332,9 @@ const About = () => {
                                 {aboutItem.imageTwo ? (
                                   <>
                                     <div className="details-container">
+                                      <h1 className="about-image-title">
+                                        {aboutItem.imageTwoTitle}
+                                      </h1>
                                       {aboutItem.descriptionTwo ? (
                                         <>
                                           <div

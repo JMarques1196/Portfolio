@@ -136,7 +136,13 @@ a{
   margin-bottom: 0.75rem;
   max-width: 31.25rem;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+}
+.about-image-title{
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #8fa2b7;
+  line-height: 2.25rem;
 }
 .about-image {
   width: 100%;
