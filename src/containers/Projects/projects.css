@@ -208,7 +208,8 @@ input[type="checkbox"]:checked {
   display: grid;
   justify-items: center;
   align-content: center;
-  margin-left: 1.938rem;
+  position: relative;
+  left: 1.938rem;
   margin-right: 1.938rem;
   border-radius: 0.625rem;
   cursor: pointer;
@@ -223,7 +224,8 @@ input[type="checkbox"]:checked {
   transition: all 0.3s ease-in-out;
 }
 .card-git {
-  margin-right: 1.938rem;
+  position: relative;
+  right: 1.938rem;
 }
 .card-git:hover {
   scale: 1.1;

@@ -239,26 +239,31 @@ const Projects = () => {
                     <div className="card-description">
                       <p className="card-text">{item.description}</p>
                       <div className="links-wrapper">
-                        <div className="card-link-container">
-                          <a
-                            className="card-link"
-                            href={item.projectLink}
-                            aria-label={item.title}
-                            target="_blank"
-                            rel="noreferrer"
-                          >
-                            view-project
-                          </a>
-                        </div>
-                        <div className="card-git">
-                          <a
-                            href={item.codeLink}
-                            target="_blank"
-                            rel="noreferrer"
-                          >
-                            <img src={githubWhite} alt="git" />
-                          </a>
-                        </div>
+                        {item.projectLink ? (
+                          <div className="card-link-container">
+                            <a
+                              className="card-link"
+                              href={item.projectLink}
+                              aria-label={item.title}
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              view-project
+                            </a>
+                          </div>
+                        ) : null}
+
+                        {item.codeLink ? (
+                          <div className="card-git">
+                            <a
+                              href={item.codeLink}
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              <img src={githubWhite} alt="git" />
+                            </a>
+                          </div>
+                        ) : null}
                       </div>
                     </div>
                   </div>
