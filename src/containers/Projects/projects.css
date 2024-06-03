@@ -149,12 +149,12 @@ input[type="checkbox"]:checked {
 .card-title {
   font-size: 1rem;
   font-weight: 400;
+  padding-right: 0.75rem;
   color: #5565e8;
 }
 .card-tag {
   font-size: 1rem;
   font-weight: 400;
-  padding-left: 0.75rem;
   color: #8fa2b7;
 }
 .card-media-container {
@@ -317,7 +317,7 @@ input[type="checkbox"]:checked {
     padding-top: 1.094rem;
   }
   .work-card {
-    padding-top: 6.875rem;
+    padding-top: 6rem;
   }
   .card-container {
     width: 23.125rem;
