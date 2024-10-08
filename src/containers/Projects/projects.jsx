@@ -13,14 +13,16 @@ import {
   tailwindBlack,
   mern,
   mernBlack,
+  freelance,
+  freelanceBlack,
 } from "../../assets/icons";
 import CloseButton from "../../assets/icons/close-button.svg?react";
 import { motion, AnimatePresence } from "framer-motion";
 import LoadingSpinner from "../../components/spinner/spinner";
 
 const Projects = () => {
-  const filterItems = ["All", "Javascript", "React JS", "Freelance", "MERN"];
-  const itemsIcons = [asterisk, javascript, react, tailwind, mern];
+  const filterItems = ["All", "Javascript", "React JS", "Freelance", "SQL"];
+  const itemsIcons = [asterisk, javascript, react, freelance, mern];
 
   const [works, setWorks] = useState([]);
   const [filterWork, setFilterWork] = useState([]);
@@ -219,7 +221,7 @@ const Projects = () => {
                       ) : item.tags[0] === "Freelance / " ? (
                         <img
                           className="card-icon dark-blue"
-                          src={tailwindBlack}
+                          src={freelanceBlack}
                           alt="css"
                         />
                       ) : item.tags[0] === "MERN" ? (

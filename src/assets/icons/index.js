@@ -27,3 +27,5 @@ export { default as stripe } from "./stripe.svg";
 export { default as stripeWhite } from "./stripeWhite.svg";
 export { default as mern } from "./mern.svg";
 export { default as mernBlack } from "./mernBlack.svg";
+export { default as freelance } from "./freelance.svg";
+export { default as freelanceBlack } from "./freelanceBlack.svg";

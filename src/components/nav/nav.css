@@ -78,7 +78,7 @@ ul {
   width: 100%;
   position: absolute;
   height: 3px;
-  background: #8fa2b7;
+  background: gray;
   display: block;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
