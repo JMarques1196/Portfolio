@@ -218,7 +218,7 @@ const Projects = () => {
                           src={javascriptBlack}
                           alt="javascript"
                         />
-                      ) : item.tags[0] === "Freelance / " ? (
+                      ) : item.tags[0] === "Freelance" ? (
                         <img
                           className="card-icon dark-blue"
                           src={freelanceBlack}
