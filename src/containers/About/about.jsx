@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { arrowRight, terminal, gamepad, settings } from "../../assets/icons";
 import CloseButton from "../../assets/icons/close-button.svg?react";
 import ChatIcon from "../../assets/icons/chat-icon.svg?react";
-import { Footer } from "../../components";
 import { motion, AnimatePresence } from "framer-motion";
 import React from "react";
 import LoadingSpinner from "../../components/spinner/spinner";
