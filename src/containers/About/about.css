@@ -48,7 +48,22 @@ a{
 }
 .about-subtitle-container {
   display: flex;
+  overflow: hidden;
+  opacity: 0;
+  height: 0;
+  padding-bottom: 0;
+  font-size: 0;
+  transition: all ease-out 0.2s;
 }
+
+.about-toggled{
+  transition: all ease-in 0.2s;
+  opacity: 1;
+  height: 13px;
+  padding-bottom: 0.938rem;
+  font-size: 1rem;
+}
+
 .about-arrow-icon {
   padding-left: 1rem;
   transition: all 0.3s ease-in-out;
@@ -74,9 +89,22 @@ a{
   color: #fff;
 }
 .about-item-container {
-  padding-bottom: 0.625rem;
-  padding-left: 2.875rem;
   display: flex;
+  overflow: hidden;
+  opacity: 0;
+  height: 0;
+  padding-bottom: 0;
+  font-size: 0;
+  transition: all ease-out 0.2s;
+}
+
+.about-item-toggle{
+  transition: all ease-in 0.2s;
+  opacity: 1;
+  height: 13px;
+  padding-left: 2.875rem;
+  padding-bottom: 1rem;
+  font-size: 1rem;
 }
 
 .about-text-container {
@@ -188,13 +216,13 @@ a{
   height: 0px;
   opacity: 0;
   overflow: hidden;
-  transition: all 0.1s ease-out;
+  transition: all 0.2s ease-out;
   visibility: hidden;
 }
 .details-open{
   visibility: visible;
   opacity: 1;
-  transition: all 0.1s ease-in;
+  transition: all 0.2s ease-in;
   border-top: 1px solid #8fa2b7;
   height: 2rem;
   padding-top: 1.063rem;

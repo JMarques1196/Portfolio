@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { arrowRight, terminal, gamepad, settings } from "../../assets/icons";
 import CloseButton from "../../assets/icons/close-button.svg?react";
 import ChatIcon from "../../assets/icons/chat-icon.svg?react";
-import { motion, AnimatePresence } from "framer-motion";
 import React from "react";
 import LoadingSpinner from "../../components/spinner/spinner";
 
@@ -99,7 +98,7 @@ const About = () => {
   };
 
   return (
-    <motion.div
+    <div
       id="about"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -115,7 +114,7 @@ const About = () => {
         {about.length === 0 && <LoadingSpinner />}
         <div className="about-dropdown-container">
           {about.map((about, index) => (
-            <React.Fragment key={index}>
+            <>
               <div
                 className={
                   titleToggle[index] === true
@@ -138,113 +137,71 @@ const About = () => {
               </div>
 
               {about.aboutDropdown?.map((dropdown, subtitleIndex) => (
-                <React.Fragment key={subtitleIndex}>
-                  <AnimatePresence initial={false}>
-                    {titleToggle[index] && (
-                      <motion.section
-                        className="about-subtitle-container"
-                        key="content"
-                        initial="collapsed"
-                        animate="open"
-                        exit="collapsed"
-                        variants={{
-                          open: {
-                            opacity: 1,
-                            height: 13,
-                            paddingBottom: "0.938rem",
-                            fontSize: "1remx",
-                          },
-                          collapsed: {
-                            opacity: 0,
-                            height: 0,
-                            paddingBottom: 0,
-                            fontSize: 0,
-                          },
-                        }}
-                        transition={{
-                          duration: 0.4,
-                          ease: [0, 0.62, 0.23, 0.98],
-                        }}
-                        onClick={() => handleSubtitleToggle(dropdown.position)}
-                      >
-                        <img
-                          className={
-                            subtitleToggle[dropdown.position] === true
-                              ? "about-arrow-icon about-icon-rotate"
-                              : "about-arrow-icon"
-                          }
-                          src={arrowRight}
-                          alt="arrow"
-                        />
-                        <img
-                          className="about-folder-icon"
-                          src={urlFor(dropdown.icon)}
-                          alt="icon"
-                        />
-                        <h2
-                          className={
-                            subtitleToggle[dropdown.position] === true
-                              ? "about-subtitle selected"
-                              : "about-subtitle"
-                          }
-                        >
-                          {dropdown.subtitle}
-                        </h2>
-                      </motion.section>
-                    )}
-                  </AnimatePresence>
+                <>
+                  <div
+                    className={
+                      titleToggle[index]
+                        ? "about-subtitle-container about-toggled"
+                        : "about-subtitle-container"
+                    }
+                    onClick={() => handleSubtitleToggle(dropdown.position)}
+                  >
+                    <img
+                      className={
+                        subtitleToggle[dropdown.position] === true
+                          ? "about-arrow-icon about-icon-rotate"
+                          : "about-arrow-icon"
+                      }
+                      src={arrowRight}
+                      alt="arrow"
+                    />
+                    <img
+                      className="about-folder-icon"
+                      src={urlFor(dropdown.icon)}
+                      alt="icon"
+                    />
+                    <h2
+                      className={
+                        subtitleToggle[dropdown.position] === true
+                          ? "about-subtitle selected"
+                          : "about-subtitle"
+                      }
+                    >
+                      {dropdown.subtitle}
+                    </h2>
+                  </div>
 
                   {dropdown.aboutItem?.map((aboutItem, itemIndex) => (
-                    <AnimatePresence initial={false} key={itemIndex}>
-                      {subtitleToggle[dropdown.position] && (
-                        <motion.section
-                          className="about-item-container"
-                          key="content"
-                          initial="collapsed"
-                          animate="open"
-                          exit="collapsed"
-                          variants={{
-                            open: {
-                              opacity: 1,
-                              height: 13,
-                              paddingBottom: "0.938rem",
-                              fontSize: "1rem",
-                            },
-                            collapsed: {
-                              opacity: 0,
-                              height: 0,
-                              paddingBottom: 0,
-                              fontSize: 0,
-                            },
-                          }}
-                          transition={{
-                            duration: 0.4,
-                            ease: [0, 0.62, 0.23, 0.98],
-                          }}
-                          onClick={() => {
-                            handleTextToggle(aboutItem._key);
-                            setDetailsToggle([false, false]);
-                          }}
-                        >
-                          <img
-                            className="about-item-icon"
-                            src={urlFor(aboutItem.icon)}
-                            alt="item-icon"
-                          />
-                          <h3 className="about-item">{aboutItem.item}</h3>
-                        </motion.section>
-                      )}
-                    </AnimatePresence>
+                    <>
+                      <div
+                        className={
+                          subtitleToggle[dropdown.position]
+                            ? "about-subtitle-container about-item-toggle"
+                            : "about-subtitle-container"
+                        }
+                        onClick={() => {
+                          handleTextToggle(aboutItem._key);
+                          setDetailsToggle([false, false]);
+                        }}
+                      >
+                        <img
+                          className="about-item-icon"
+                          src={urlFor(aboutItem.icon)}
+                          alt="item-icon"
+                        />
+                        <h3 className="about-item">{aboutItem.item}</h3>
+                      </div>
+                    </>
                   ))}
-                </React.Fragment>
+                </>
               ))}
-            </React.Fragment>
+            </>
           ))}
         </div>
         {about?.map((about, index) => (
-          <React.Fragment key={index}>
+          <>
             {about.aboutDropdown?.map((dropdown, subtitleIndex) => (
-              <React.Fragment key={subtitleIndex}>
+              <>
                 {dropdown.aboutItem?.map(
                   (aboutItem, itemIndex) =>
                     textToggled.key === aboutItem._key && (
@@ -389,12 +346,12 @@ const About = () => {
                       </div>
                     )
                 )}
-              </React.Fragment>
+              </>
             ))}
-          </React.Fragment>
+          </>
         ))}
       </div>
-    </motion.div>
+    </div>
   );
 };
 
