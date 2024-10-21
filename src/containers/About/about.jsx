@@ -313,19 +313,23 @@ const About = () => {
                                       src={urlFor(aboutItem.imageOne)}
                                       alt="im1"
                                     />
-                                    {detailsToggle[0] && (
-                                      <div className={"details-text-container"}>
-                                        <p className="details-text">
-                                          {aboutItem.descriptionOne}
-                                        </p>
-                                        <CloseButton
-                                          className="close-button"
-                                          onClick={() =>
-                                            manageDetails(detailsToggle, "1")
-                                          }
-                                        />
-                                      </div>
-                                    )}
+                                    <div
+                                      className={
+                                        detailsToggle[0]
+                                          ? "details-text-container details-open"
+                                          : "details-text-container"
+                                      }
+                                    >
+                                      <p className="details-text">
+                                        {aboutItem.descriptionOne}
+                                      </p>
+                                      <CloseButton
+                                        className="close-button"
+                                        onClick={() =>
+                                          manageDetails(detailsToggle, "1")
+                                        }
+                                      />
+                                    </div>
                                   </>
                                 ) : null}
                                 {aboutItem.imageTwo ? (
@@ -358,19 +362,24 @@ const About = () => {
                                       src={urlFor(aboutItem.imageTwo)}
                                       alt="im2"
                                     />
-                                    {detailsToggle[1] && (
-                                      <div className={"details-text-container"}>
-                                        <p className="details-text">
-                                          {aboutItem.descriptionTwo}
-                                        </p>
-                                        <CloseButton
-                                          className="close-button"
-                                          onClick={() =>
-                                            manageDetails(detailsToggle, "2")
-                                          }
-                                        />
-                                      </div>
-                                    )}
+
+                                    <div
+                                      className={
+                                        detailsToggle[1]
+                                          ? "details-text-container details-open"
+                                          : "details-text-container"
+                                      }
+                                    >
+                                      <p className="details-text">
+                                        {aboutItem.descriptionTwo}
+                                      </p>
+                                      <CloseButton
+                                        className="close-button"
+                                        onClick={() =>
+                                          manageDetails(detailsToggle, "2")
+                                        }
+                                      />
+                                    </div>
                                   </>
                                 ) : null}
                               </div>

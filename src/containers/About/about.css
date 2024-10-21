@@ -184,10 +184,19 @@ a{
 .details-text-container {
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid #8fa2b7;
   max-width: 31.25rem;
+  height: 0px;
+  overflow: hidden;
+  transition: height 0.1s ease-out;
+  visibility: hidden;
+}
+.details-open{
+  visibility: visible;
+  transition: height 0.1s ease-in;
+  border-top: 1px solid #8fa2b7;
+  height: 2rem;
   padding-top: 1.063rem;
-  padding-bottom: 3.188rem;
+  margin-bottom: 3.188rem; 
 }
 .details-text {
   width: 100%;
