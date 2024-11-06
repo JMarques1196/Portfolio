@@ -1,7 +1,6 @@
 import "./projects.css";
 import { useState, useEffect } from "react";
 import { client, urlFor } from "../../client";
-import { Footer } from "../../components";
 import {
   javascript,
   javascriptBlack,
