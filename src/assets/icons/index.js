@@ -29,3 +29,5 @@ export { default as mern } from "./mern.svg";
 export { default as mernBlack } from "./mernBlack.svg";
 export { default as freelance } from "./freelance.svg";
 export { default as freelanceBlack } from "./freelanceBlack.svg";
+export { default as pythonBlack } from "./python-black.svg";
+export { default as python } from "./python.svg";

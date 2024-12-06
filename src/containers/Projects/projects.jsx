@@ -8,8 +8,8 @@ import {
   asterisk,
   reactBlack,
   githubWhite,
-  tailwind,
-  tailwindBlack,
+  python,
+  pythonBlack,
   mern,
   mernBlack,
   freelance,
@@ -20,8 +20,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import LoadingSpinner from "../../components/spinner/spinner";
 
 const Projects = () => {
-  const filterItems = ["All", "Javascript", "React JS", "Freelance", "SQL"];
-  const itemsIcons = [asterisk, javascript, react, freelance, mern];
+  const filterItems = [
+    "All",
+    "Javascript",
+    "React JS",
+    "Freelance",
+    "SQL",
+    "Python",
+  ];
+  const itemsIcons = [asterisk, javascript, react, freelance, mern, python];
 
   const [works, setWorks] = useState([]);
   const [filterWork, setFilterWork] = useState([]);
@@ -228,6 +235,12 @@ const Projects = () => {
                           className="card-icon white"
                           src={mernBlack}
                           alt="stripe"
+                        />
+                      ) : item.tags[0] === "Python" ? (
+                        <img
+                          className="card-icon white"
+                          src={pythonBlack}
+                          alt="python"
                         />
                       ) : null}
                     </div>
