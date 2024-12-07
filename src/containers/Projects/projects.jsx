@@ -234,7 +234,7 @@ const Projects = () => {
                         <img
                           className="card-icon white"
                           src={mernBlack}
-                          alt="stripe"
+                          alt="mern"
                         />
                       ) : item.tags[0] === "Python" ? (
                         <img
