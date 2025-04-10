@@ -16,7 +16,6 @@ import {
   freelanceBlack,
 } from "../../assets/icons";
 import CloseButton from "../../assets/icons/close-button.svg?react";
-import { motion, AnimatePresence } from "framer-motion";
 import LoadingSpinner from "../../components/spinner/spinner";
 
 const Projects = () => {
@@ -124,52 +123,30 @@ const Projects = () => {
               <h2 className="works-subtitle">projects</h2>
             </div>
 
-            <div className={toggle && "works-filter"}>
+            <div
+              className={
+                toggle ? "works-filter works-filter-open" : "works-filter"
+              }
+            >
               {filterItems.map((item, index) => (
-                <AnimatePresence initial={false} key={index}>
-                  {toggle && (
-                    //animations, same for all dropdowns
-                    <motion.section
-                      className="works-filter-item"
-                      initial="collapsed"
-                      animate="open"
-                      exit="collapsed"
-                      variants={{
-                        open: {
-                          opacity: 1,
-                          height: 15,
-                          paddingBottom: "0.938rem",
-                          fontSize: "1rem",
-                        },
-                        collapsed: {
-                          opacity: 0,
-                          height: 0,
-                          paddingBottom: 0,
-                          fontSize: 0,
-                        },
-                      }}
-                      transition={{
-                        duration: 0.4,
-                        ease: [0, 0.62, 0.23, 0.98],
-                      }}
-                    >
-                      <input
-                        id={item}
-                        className="works-checkbox"
-                        value={item}
-                        type="checkbox"
-                        checked={checked[index]}
-                        onChange={() => handleOnChange(index, item)}
-                      />
-                      <img
-                        className="works-checkbox-icon"
-                        src={itemsIcons[index]}
-                        alt="icon"
-                      />
-                      <label htmlFor={item}>{item}</label>
-                    </motion.section>
-                  )}
-                </AnimatePresence>
+                <>
+                  <div className="works-filter-item">
+                    <input
+                      id={item}
+                      className="works-checkbox"
+                      value={item}
+                      type="checkbox"
+                      checked={checked[index]}
+                      onChange={() => handleOnChange(index, item)}
+                    />
+                    <img
+                      className="works-checkbox-icon"
+                      src={itemsIcons[index]}
+                      alt="icon"
+                    />
+                    <label htmlFor={item}>{item}</label>
+                  </div>
+                </>
               ))}
             </div>
           </div>

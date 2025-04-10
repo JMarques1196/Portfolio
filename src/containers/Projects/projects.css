@@ -59,6 +59,16 @@
 .works-filter {
   display: grid;
   gap: 1.094rem;
+  overflow: hidden;
+  opacity: 0;
+  height: 0;
+  transition: all ease-out 0.2s;
+}
+
+.works-filter-open{
+  transition: all ease-in 0.2s;
+  opacity: 1;
+  height: 23rem
 }
 
 .hide-filter {
