@@ -16,6 +16,7 @@ import {
   freelanceBlack,
 } from "../../assets/icons";
 import CloseButton from "../../assets/icons/close-button.svg?react";
+import { motion } from "framer-motion";
 import LoadingSpinner from "../../components/spinner/spinner";
 
 const Projects = () => {
